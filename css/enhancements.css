@@ -1,0 +1,60 @@
+/* Progressive enhancement: without JS the original navigation remains visible. */
+.nav-toggle { display: none; }
+@media (max-width: 760px) {
+  .site-header.menu-enhanced { position: relative; z-index: 10; flex-wrap: nowrap; }
+  .menu-enhanced .nav-toggle { display: inline-flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; flex-shrink: 0; width: 46px; height: 46px; padding: 10px; border: 1px solid var(--pink); background: var(--black); color: var(--pink); cursor: pointer; }
+  .nav-toggle > span { width: 24px; height: 2px; background: currentColor; transition: transform 180ms ease, opacity 180ms ease; }
+  .nav-toggle[aria-expanded="true"] > span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] > span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] > span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-toggle:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
+  .site-header.menu-enhanced nav { position: absolute; top: calc(100% + 1px); left: var(--gutter); right: var(--gutter); width: auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; padding: .5rem 1rem; border: 1px solid var(--pink); background: var(--black); box-shadow: 4px 5px 0 var(--pink); opacity: 0; visibility: hidden; transform: translateY(-6px); pointer-events: none; transition: opacity 180ms ease, transform 180ms ease, visibility 0s linear 180ms; }
+  .site-header.menu-open nav { opacity: 1; visibility: visible; transform: none; pointer-events: auto; transition-delay: 0s; }
+  .site-header.menu-enhanced nav a { display: flex; align-items: center; min-height: 44px; font-size: .85rem; border-bottom: 1px solid #ffffff30; }
+  .site-header.menu-enhanced nav a:last-child { border-bottom: 0; }
+}
+/* Individual translate does not replace existing hover/tilt transforms. */
+[data-reveal] { opacity: 0; translate: 0 12px; transition: opacity 420ms ease var(--reveal-delay, 0ms), translate 420ms ease var(--reveal-delay, 0ms); }
+[data-reveal].is-revealed, [data-reveal]:focus-within { opacity: 1; translate: 0 0; }
+.category-poster[data-reveal], .character-posters.is-interactive .character-poster[data-reveal] { transition: transform 220ms ease, opacity 420ms ease var(--reveal-delay, 0ms), translate 420ms ease var(--reveal-delay, 0ms); }
+.contact-action[data-reveal] { transition: transform 200ms ease, box-shadow 200ms ease, opacity 420ms ease var(--reveal-delay, 0ms), translate 420ms ease var(--reveal-delay, 0ms); }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; translate: none; transition: none; }
+  .nav-toggle > span, .site-header.menu-enhanced nav { transition: none; }
+}
+
+/* Step 04 shares the existing observers and their buffered replay behavior.
+   Individual scale/translate preserve the poster's original -3deg transform. */
+.wordmark-finale > .developed-sheet[data-reveal] {
+  scale: .95;
+  translate: 0 10px;
+  transition: opacity 500ms ease, translate 500ms ease, scale 500ms ease;
+}
+.wordmark-finale > .developed-sheet[data-reveal].is-revealed {
+  scale: 1;
+  translate: 0 0;
+}
+.wordmark-finale > p[data-reveal] { transition-delay: 180ms; }
+@media (prefers-reduced-motion: reduce) {
+  .wordmark-finale > .developed-sheet[data-reveal],
+  .wordmark-finale > p[data-reveal] { opacity: 1; scale: 1; translate: none; transition: none; }
+}
+
+/* Short touch/pen presses use the existing transform transitions, not another animation. */
+.character-posters.is-interactive .character-poster.is-touch-pressed { transform: translateY(-3px); }
+.character-posters.is-interactive .character-poster.is-touch-pressed > img { transform: translateY(-2px); }
+.character-poster.is-touch-pressed .trigger-caption { background: var(--pink); color: var(--black); }
+.character-poster.is-touch-pressed .trigger-caption > span { color: var(--black); }
+.category-poster.is-touch-pressed { transform: translateY(-2px); }
+.category-poster.is-touch-pressed::before { transform: translate(6px, 8px); }
+.category-poster.is-touch-pressed .category-label { color: var(--pink); }
+.category-poster.is-touch-pressed .category-label > span { transform: translateX(2px) rotate(4deg); }
+.work-open.is-touch-pressed .work-artwork img { transform: translateY(-2px) scale(1.025); }
+.work-open.is-touch-pressed .work-label { color: var(--pink); }
+@media (prefers-reduced-motion: reduce) {
+  .character-posters.is-interactive .character-poster.is-touch-pressed,
+  .character-posters.is-interactive .character-poster.is-touch-pressed > img,
+  .category-poster.is-touch-pressed, .category-poster.is-touch-pressed .category-label > span,
+  .work-open.is-touch-pressed .work-artwork img { transform: none; }
+  .category-poster.is-touch-pressed::before { transform: translate(4px, 5px); }
+}

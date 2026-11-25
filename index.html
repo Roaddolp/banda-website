@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="BANDA! is a creative merchandising business led by Multimedia Arts students, featuring original characters Bam, Melody, and Blaze.">
+  <title>BANDA! — Creative Merchandising</title>
+  <link rel="preload" href="assets/fonts/Barlow-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/development.css">
+  <link rel="stylesheet" href="css/characters.css">
+  <link rel="stylesheet" href="css/works.css">
+  <link rel="stylesheet" href="css/team.css">
+  <link rel="stylesheet" href="css/enhancements.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/enhancements.js" defer></script>
+  <script src="js/sketch-pendulum.js" defer></script>
+  <script src="js/dialog.js" defer></script>
+  <script src="js/characters.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="BANDA! home"><img src="assets/images/brand/banda-wordmark.webp" alt="" width="1200" height="597"></a>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="products.html">Products</a>
+      <a href="index.html#introduction">Meet the Noise</a>
+      <a href="index.html#development">Background</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="brand-title">
+      <div class="section-inner hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span aria-hidden="true">✳</span> Creative merchandising business</p>
+          <h1 id="brand-title"><span class="sr-only">BANDA!</span><img class="wordmark" src="assets/images/brand/banda-wordmark.webp" alt="" width="1200" height="597" fetchpriority="high"></h1>
+          <p class="hero-description">BANDA! Is a creative merchandising business led by Multimedia Arts students that develops and sells products inspired by its original character-based concept.</p>
+          <div class="hero-actions"><a class="intro-link" href="#introduction">Meet BANDA! <span aria-hidden="true">↓</span></a><a class="intro-link intro-link-secondary" href="products.html">View Products <span aria-hidden="true">↗</span></a></div>
+        </div>
+
+        <figure class="character-collage">
+          <div class="collage-paper" aria-hidden="true"></div>
+          <span class="tape tape-top" aria-hidden="true"></span>
+          <span class="collage-star" aria-hidden="true">✳</span>
+          <img class="character-art" src="assets/images/characters/banda-group.webp" srcset="assets/images/characters/banda-group-small.webp 600w, assets/images/characters/banda-group.webp 1100w" sizes="(max-width: 760px) 90vw, 48vw" alt="Blaze at the drums, Bam playing bass, and Melody with a microphone and guitar." width="1100" height="670" fetchpriority="high">
+          <span class="collage-caption-space" aria-hidden="true"></span>
+          <span class="tape tape-bottom" aria-hidden="true"></span>
+        </figure>
+        <div class="hero-bottom" aria-hidden="true"><span>BANDA!</span><span>Multimedia Arts</span></div>
+      </div>
+    </section>
+
+    <section class="introduction" id="introduction" aria-labelledby="introduction-title">
+      <div class="section-inner introduction-inner">
+        <div class="intro-heading"><p class="eyebrow">BANDA!</p><h2 id="introduction-title">MEET THE<br><span>NOISE</span></h2><span class="intro-star" aria-hidden="true">✳</span></div>
+        <div class="intro-body">
+          <p class="intro-statement">It features three (3) original characters—<strong>Bam, Melody, and Blaze.</strong></p>
+        </div>
+        <div class="character-posters" aria-label="Original character profiles">
+          <article class="character-poster mel-poster" aria-labelledby="mel-name">
+            <header><p class="character-role">Lead Vocalist / Frontwoman</p><h3 id="mel-name">Mel <span>(Melody)</span></h3><p class="character-tagline">Loud mouth. Louder eyeliner.</p></header>
+            <img src="assets/images/characters/mel-portrait.webp" alt="Melody with a pink bandana, microphone, and expressive pose." width="547" height="650" loading="lazy" decoding="async">
+            <details class="character-profile">
+              <summary>Read Mel's profile</summary>
+              <div class="profile-copy"><p>Mel (Melody) is a very talented and confident performer who loves expressing herself through fashion and music. She is energetic and brings the group to life with her outgoing personality, loves being in the spotlight, and wears a pink bandana that represents her assigned color.</p><ul aria-label="Mel's character tags"><li>Lead vocalist</li><li>Fashion</li><li>Pink bandana</li></ul></div>
+            </details>
+          </article>
+          <article class="character-poster bam-poster" aria-labelledby="bam-name">
+            <header><p class="character-role">Bassist</p><h3 id="bam-name">Bam</h3><p class="character-tagline">Says nothing. Means every note.</p></header>
+            <img src="assets/images/characters/bam-portrait.webp" alt="Bam holding his bass guitar, wearing a bandana and a relaxed outfit." width="463" height="650" loading="lazy" decoding="async">
+            <details class="character-profile">
+              <summary>Read Bam's profile</summary>
+              <div class="profile-copy"><p>Bam is a chill and quiet guy, BANDA!'s bassist. He prioritizes comfort and functionality over aesthetics, so he wears a cozy, laid-back outfit. He is the calmest member of the group, enjoys taking things slow and steady, and wears a yellow bandana that represents his assigned color.</p><ul aria-label="Bam's character tags"><li>Bassist</li><li>Laid-back</li><li>Yellow bandana</li></ul></div>
+            </details>
+          </article>
+          <article class="character-poster blaze-poster" aria-labelledby="blaze-name">
+            <header><p class="character-role">Drummer</p><h3 id="blaze-name">Blaze</h3><p class="character-tagline">Human metronome. Professional menace.</p></header>
+            <img src="assets/images/characters/blaze-portrait.webp" alt="Blaze, a red panda with a red bandana and a drumstick." width="434" height="650" loading="lazy" decoding="async">
+            <details class="character-profile">
+              <summary>Read Blaze's profile</summary>
+              <div class="profile-copy"><p>Blaze is the loudest and most energetic member of the group, with an edgier style and explosive stage presence. Highly impulsive, they carry the band's energy on stage and wear a red bandana that represents their assigned color.</p><ul aria-label="Blaze's character tags"><li>Drummer</li><li>Edgy</li><li>Red bandana</li></ul></div>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+    <dialog class="character-spotlight" id="character-spotlight" aria-labelledby="spotlight-name">
+      <button class="spotlight-close" type="button" aria-label="Close character spotlight" autofocus>Close <span aria-hidden="true">×</span></button>
+      <div class="spotlight-layout">
+        <div class="spotlight-art"></div>
+        <div class="spotlight-editorial">
+          <p class="character-role" id="spotlight-role"></p>
+          <h2 id="spotlight-name"></h2>
+          <p class="character-tagline" id="spotlight-tagline"></p>
+          <div class="spotlight-biography"></div>
+        </div>
+      </div>
+    </dialog>
+    <section class="development" id="development" aria-labelledby="development-title">
+      <div class="section-inner development-inner">
+        <header class="development-heading">
+          <p class="eyebrow">BANDA!</p>
+          <h2 id="development-title">Logo Design<br>and <span>Development.</span></h2>
+          <span class="development-mark" aria-hidden="true">✳</span>
+        </header>
+
+        <article class="process-row sketches-row" aria-labelledby="sketches-title">
+          <div class="sketch-board">
+            <div class="sketch-mount lettering-mount"><figure class="process-paper lettering-sheet">
+              <img src="assets/images/process/lettering-explorations.webp" alt="Hand-drawn BANDA lettering explorations, including angular letters and early panda-inspired details." width="900" height="1274" loading="lazy" decoding="async">
+            </figure><span class="sketch-pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M13 14 12 22" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="currentColor" stroke="#000" stroke-width="1.5"/><path d="m9 10 3-1m2 5 1-1" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="1.2" stroke-linecap="round"/></svg></span></div>
+            <div class="sketch-pair">
+              <div class="sketch-mount wordmark-mount"><figure class="process-paper sketch-sheet">
+                <img src="assets/images/process/wordmark-sketch.webp" alt="Hand-drawn BANDA! wordmark with an irregular outline." width="792" height="555" loading="lazy" decoding="async">
+              </figure><span class="sketch-pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M13 14 12 22" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="currentColor" stroke="#000" stroke-width="1.5"/><path d="m9 10 3-1m2 5 1-1" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="1.2" stroke-linecap="round"/></svg></span></div>
+            </div>
+          </div>
+          <div class="process-copy">
+            <p class="process-step" aria-hidden="true">01 /</p>
+            <h3 id="sketches-title">Initial Sketches<br><span>&amp; Design</span></h3>
+            <p>Different lettering styles, arrangements, and compositions were sketched to explore how the brand name could be presented in a fun and recognizable way.</p>
+          </div>
+        </article>
+
+        <article class="process-row digital-row" aria-labelledby="digital-title">
+          <div class="process-copy">
+            <p class="process-step" aria-hidden="true">02 /</p>
+            <h3 id="digital-title">Photo Referencing<br><span>(Digitalization)</span></h3>
+            <p>During this stage, the team explored visual references to guide the digital development of the logo. The initial sketches served as the basis for refining the customized lettering and incorporating the panda-inspired details.</p>
+            <p>Different visual treatments were considered to achieve a bold, playful, and slightly edgy appearance that reflects BANDA!'s music-inspired identity. These references helped guide the translation of the hand-drawn concepts into a more refined digital design while maintaining the original idea behind the logo</p>
+          </div>
+          <div class="sketch-mount digital-mount"><figure class="digital-sheet">
+            <img src="assets/images/process/digital-wordmark.webp" alt="Digital BANDA! wordmark combining bold black letterforms with panda-inspired shapes." width="455" height="228" loading="lazy" decoding="async">
+          </figure><span class="sketch-pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M13 14 12 22" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="currentColor" stroke="#000" stroke-width="1.5"/><path d="m9 10 3-1m2 5 1-1" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="1.2" stroke-linecap="round"/></svg></span></div>
+        </article>
+
+        <article class="process-row wordmark-row" aria-labelledby="elements-title">
+          <div class="sketch-mount elements-mount"><figure class="elements-study">
+            <img src="assets/images/process/circular-sketch.webp" alt="BANDA! composition study bringing the panda-inspired letters together inside a hand-drawn circle." width="718" height="678" loading="lazy" decoding="async">
+          </figure><span class="sketch-pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M13 14 12 22" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="currentColor" stroke="#000" stroke-width="1.5"/><path d="m9 10 3-1m2 5 1-1" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="1.2" stroke-linecap="round"/></svg></span></div>
+          <div class="process-copy">
+            <p class="process-step" aria-hidden="true">03 /</p>
+            <h3 id="elements-title">Organizing<br><span>the Elements</span></h3>
+            <p>As the concept developed, we combined bold typography with the panda-inspired details to create our custom wordmark. We wanted the logo to feel like something you would see on a band's merchandise or album cover.</p>
+          </div>
+        </article>
+
+        <article class="wordmark-finale" aria-labelledby="wordmark-title">
+          <header><p class="process-step" aria-hidden="true">04 /</p><h3 id="wordmark-title">BANDA! Wordmark</h3></header>
+          <figure class="developed-sheet">
+            <img src="assets/images/process/developed-wordmark.webp" alt="Developed BANDA! wordmark with bold panda-inspired lettering and a white outline." width="1200" height="607" loading="lazy" decoding="async">
+          </figure>
+          <p>This helped us establish a visual identity that connects music, creativity, and the personality of BANDA!.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="product-development" id="product-development" aria-labelledby="product-development-title">
+      <div class="section-inner product-development-inner">
+        <div class="product-development-copy"><header><p class="eyebrow">BANDA!</p><h2 id="product-development-title">Product Design<br>&amp; Development</h2></header>
+        <p>Our merchandise designs were created to not only be <strong>cute</strong>, but also <strong>relatable and funny.</strong></p></div>
+        <div class="category-picker" aria-label="Discover a design category">
+          <a class="category-poster category-keychains" href="products.html?category=keychains" data-discover="keychains"><img class="category-artwork" src="assets/images/characters/mel-portrait.webp" alt="Mel acrylic keychain artwork" width="547" height="650" loading="lazy" decoding="async"><span class="category-label">Acrylic Keychains <span aria-hidden="true">↗</span></span></a>
+          <a class="category-poster category-pins" href="products.html?category=pins" data-discover="pins"><img class="category-artwork" src="assets/images/artifacts/bags-coded.webp" alt="Bags coded pin artwork" width="360" height="360" loading="lazy" decoding="async"><span class="category-label">Pins <span aria-hidden="true">↗</span></span></a>
+          <a class="category-poster category-stickers" href="products.html?category=stickers" data-discover="stickers"><img class="category-artwork" src="assets/images/artifacts/keep-quiet.webp" alt="Keep Quiet sticker artwork" width="309" height="420" loading="lazy" decoding="async"><span class="category-label">Stickers <span aria-hidden="true">↗</span></span></a>
+          <a class="category-poster category-bracelets" href="products.html?category=bracelets" data-discover="bracelets"><img class="category-artwork" src="assets/images/artifacts/cherry-bomb.webp" alt="Cherry Bomb bracelet artwork" width="411" height="420" loading="lazy" decoding="async"><span class="category-label">Bracelets <span aria-hidden="true">↗</span></span></a>
+        </div>
+        <span aria-hidden="true">✳</span>
+      </div>
+    </section>
+
+    <section class="team-credits" id="about" aria-labelledby="team-title" tabindex="-1">
+      <div class="section-inner team-inner">
+        <header class="team-heading"><p class="eyebrow">BANDA!</p><h2 id="team-title">MADE BY<br><span>THE BAND</span></h2><span class="credits-mark" aria-hidden="true">✳</span></header>
+        <div class="department-grid">
+          <section class="department" aria-labelledby="communications-title"><span class="department-index" aria-hidden="true">01 /</span><h3 id="communications-title">Communications</h3><ul><li>Windster Abalos</li><li>Marc Alvaro</li><li>Grace Atenas</li><li>Luane Dimas</li></ul></section>
+          <section class="department" aria-labelledby="logistics-title"><span class="department-index" aria-hidden="true">02 /</span><h3 id="logistics-title">Logistics</h3><ul><li>Marc Ampoloquio</li><li>Joexpher Bonilla</li><li>Seth Festin</li><li>March Sureta</li></ul></section>
+          <section class="department" aria-labelledby="finance-title"><span class="department-index" aria-hidden="true">03 /</span><h3 id="finance-title">Finance</h3><ul><li>Ezra Jamir</li><li>Rhia Bahia</li></ul></section>
+          <section class="department" aria-labelledby="creatives-title"><span class="department-index" aria-hidden="true">04 /</span><h3 id="creatives-title">Creatives</h3><ul><li>Yuki De Ramos</li><li>James Baker</li><li>Hannah Garingan</li><li>Maxine Hugo</li><li>Tasha Julag-ay</li><li>James Cedric Reyes</li></ul></section>
+        </div>
+      </div>
+    </section>
+    <section class="team-contact" id="contact" aria-labelledby="contact-title">
+      <div class="section-inner contact-inner">
+        <header class="contact-heading"><p class="eyebrow">BANDA!</p><h2 id="contact-title">GET IN<br>TOUCH.</h2></header>
+        <address class="contact-details">
+          <a class="contact-action contact-email" href="mailto:work.banda00@gmail.com"><span class="contact-label">Email address</span><span class="contact-value">work.banda00@gmail.com</span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+          <a class="contact-action contact-phone" href="tel:+639162505343"><span class="contact-label">Contact number</span><span class="contact-value">+63 916 250 5343</span><span class="contact-arrow" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.79a2 2 0 0 1-.45 2.11L8.09 9.89a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.33 1.83.56 2.79.69A2 2 0 0 1 22 16.92Z"/></svg></span></a>
+        </address>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer credits-footer"><img src="assets/images/brand/banda-wordmark.webp" alt="BANDA!" width="1200" height="597"><p>© 2026 BANDA! — ALL NOISE RESERVED</p><a href="#home">BACK TO TOP <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>

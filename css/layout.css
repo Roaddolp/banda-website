@@ -1,0 +1,35 @@
+.site-header, .section-inner, .site-footer { max-width: var(--content-width); margin-inline: auto; }
+.section-inner { width: 100%; padding-inline: var(--gutter); }
+.site-header { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); padding: 1.2rem var(--gutter); border-bottom: 1px solid #ffffff45; }
+.site-header nav { display: flex; gap: clamp(1rem, 3vw, 3rem); }
+.hero { position: relative; isolation: isolate; overflow: hidden; }
+.hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(1.5rem, 3vw, 3rem); align-items: center; padding-top: 3rem; }
+.hero-copy { position: relative; z-index: 2; padding-bottom: var(--space-5); }
+.hero h1 { margin: 1.2rem 0 1.5rem; }
+.hero-description { max-width: 31rem; font-size: clamp(1rem, 1.3vw, 1.15rem); }
+.character-collage { position: relative; align-self: center; margin: 1rem 0 3rem .5rem; padding: 1.5rem .5rem 2rem; }
+.hero-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; border-top: 1px solid #ffffff45; }
+.introduction { position: relative; isolation: isolate; background: var(--pink-deep); color: var(--black); clip-path: polygon(0 1%, 8% 0, 18% 1.2%, 34% .2%, 45% 1%, 62% 0, 75% 1.1%, 88% .2%, 100% 1%, 100% 99%, 87% 100%, 69% 99%, 52% 100%, 32% 99%, 15% 100%, 0 99%); }
+.introduction-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding-block: 5rem 5.5rem; }
+.intro-heading { position: relative; }
+.intro-body { align-self: center; max-width: 36rem; }
+.intro-body > p + p { margin-top: 1.5rem; }
+.site-footer { padding: 1.5rem var(--gutter); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+/* The extra 8px sits beneath the overlapping torn edge of the next section. */
+@media (min-width: 761px) {
+  .hero-inner { min-height: calc(100svh - var(--hero-header-height, 87px) + 8px); grid-template-rows: minmax(min-content, 1fr) auto; row-gap: 2rem; }
+  .hero-copy { padding-bottom: 0; }
+  .hero .character-collage { margin-block: 0; }
+}
+@media (max-width: 760px) {
+  .hero-inner { grid-template-columns: 1fr; padding-top: 2rem; }
+  .hero-copy { padding-bottom: 0; }
+  .hero h1 { max-width: 33rem; margin-block: 1rem; }
+  .hero-description { max-width: 36rem; }
+  .character-collage { width: min(100%, 490px); justify-self: center; margin: 2rem 0 2.5rem; }
+  .hero-bottom { align-items: start; font-size: .65rem; }
+  .hero-bottom span:last-child { max-width: 16rem; text-align: right; }
+  .introduction-inner { grid-template-columns: 1fr; gap: 2rem; padding-block: 3.5rem; }
+  .intro-star { right: 0; top: 0; }
+}
+@media (max-width: 390px) { .site-header { gap: .5rem; } .site-header nav { gap: .9rem; font-size: .8rem; } }

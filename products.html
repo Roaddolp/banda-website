@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Explore BANDA!'s 35 documented merchandise designs: acrylic keychains, pins, stickers, and bracelets.">
+  <title>Creative Works — BANDA!</title>
+  <link rel="preload" href="assets/fonts/Barlow-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/development.css">
+  <link rel="stylesheet" href="css/characters.css">
+  <link rel="stylesheet" href="css/works.css">
+  <link rel="stylesheet" href="css/team.css">
+  <link rel="stylesheet" href="css/enhancements.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/enhancements.js" defer></script>
+  <script src="js/dialog.js" defer></script>
+  <script src="js/data/works.js" defer></script>
+  <script src="js/works.js" defer></script>
+</head>
+<body class="products-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="BANDA! home"><img src="assets/images/brand/banda-wordmark.webp" alt="" width="1200" height="597"></a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="products.html" aria-current="page">Products</a>
+      <a href="index.html#introduction">Meet the Noise</a>
+      <a href="index.html#development">Background</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="products-hero" id="products-top" aria-labelledby="products-title">
+      <div class="section-inner products-hero-inner">
+        <div class="products-hero-copy"><p class="eyebrow">BANDA!</p><h1 id="products-title">Creative<br><span>Works</span></h1><p>The brand offers a variety of merchandise including stickers, pins, acrylic keychains, and bracelets.</p><a class="intro-link" href="#creative-works">View collection <span aria-hidden="true">↓</span></a></div>
+        <div class="products-hero-artwork"><img src="assets/images/brand/banda-cover-foreground.png" width="1848" height="851" alt="BANDA! wordmark and lightning above Melody, Bam, and Blaze." fetchpriority="high"></div>
+      </div>
+    </section>
+    <section class="creative-works" id="creative-works" aria-labelledby="works-title" tabindex="-1">
+      <div class="section-inner works-inner">
+        <header class="works-heading"><p class="eyebrow">BANDA!</p><h2 id="works-title">THE MERCHANDISE</h2></header>
+        <div class="works-filters" role="group" aria-label="Creative Works categories">
+          <button type="button" data-collection="keychains" aria-pressed="true" disabled>Acrylic Keychains</button>
+          <button type="button" data-collection="pins" aria-pressed="false" disabled>Pins</button>
+          <button type="button" data-collection="stickers" aria-pressed="false" disabled>Stickers</button>
+          <button type="button" data-collection="bracelets" aria-pressed="false" disabled>Bracelets</button>
+        </div>
+        <div class="collection-heading"><h3 id="works-collection-title" tabindex="-1">Acrylic Keychains</h3><p id="works-status" role="status" aria-live="polite"></p></div>
+        <noscript><p>Enable JavaScript to switch collections and explore the artwork spotlights.</p></noscript>
+        <div class="works-grid" id="works-grid"></div>
+        <div class="works-pagination" role="group" aria-label="Collection pages" hidden><button type="button" id="works-previous">← Previous</button><span id="works-page"></span><button type="button" id="works-next">Next →</button></div>
+      </div>
+    </section>
+    <dialog class="character-spotlight artwork-spotlight" id="artwork-spotlight" aria-labelledby="artwork-title">
+      <button class="spotlight-close" type="button" aria-label="Close artwork spotlight" autofocus>Close <span aria-hidden="true">×</span></button>
+      <div class="spotlight-layout">
+        <div class="artwork-visual"><div class="spotlight-art"></div><div class="artwork-views" role="group" aria-label="Artwork views"></div></div>
+        <div class="spotlight-editorial"><p class="character-role" id="artwork-category"></p><h2 id="artwork-title"></h2><p class="artwork-specification"></p><p class="artwork-description"></p></div>
+      </div>
+    </dialog>
+  </main>
+  <footer class="site-footer credits-footer"><img src="assets/images/brand/banda-wordmark.webp" alt="BANDA!" width="1200" height="597"><p>© 2026 BANDA! — ALL NOISE RESERVED</p><a href="#products-top">BACK TO TOP <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>

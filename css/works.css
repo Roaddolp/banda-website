@@ -1,0 +1,203 @@
+/* Category discovery extends the process section without changing its other stages. */
+.product-development { display: block; }
+.product-development-copy { display: flex; gap: 2rem; justify-content: space-between; align-items: start; }
+.product-development-copy p { margin-top: 0; max-width: 36ch; font-size: .95rem; line-height: 1.65; }
+.category-picker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; margin-top: 3rem; padding-bottom: .5rem; }
+.category-poster { position: relative; isolation: isolate; display: grid; grid-template-rows: auto 1fr auto; background: var(--black); color: var(--white); border: 1px solid var(--black); padding: 1rem; text-decoration: none; transition: transform 220ms ease; }
+/* Separate paper backing and black face, with no extra markup or layout changes. */
+.category-poster::before, .category-poster::after { content: ''; position: absolute; pointer-events: none; }
+.category-poster::before { inset: -1px; z-index: -2; background: var(--white); transform: translate(4px, 5px); transition: transform 220ms ease; }
+.category-poster::after { inset: 0; z-index: -1; background: var(--black); }
+.category-poster[aria-current="true"] { outline: 2px solid var(--black); outline-offset: 4px; }
+.category-count { font-size: .65rem; text-transform: uppercase; letter-spacing: .08em; }
+.category-artwork { width: 100%; height: clamp(8rem, 14vw, 12rem); object-fit: contain; margin-block: 1.25rem; transform-origin: 50% 15%; transition: transform 250ms ease; }
+.category-label { display: flex; justify-content: space-between; align-items: end; gap: .5rem; font: 400 clamp(1.1rem, 1.6vw, 1.6rem)/1.15 var(--font-display); transition: color 220ms ease; }
+.category-label > span { color: var(--pink); font: 1.5rem var(--font-body); transition: transform 220ms ease; }
+.category-poster:focus-visible { outline: 3px solid var(--white); outline-offset: -6px; }
+.category-poster:focus-visible { transform: translateY(-3px); }
+.category-poster:focus-visible::before { transform: translate(7px, 11px); }
+.category-poster:focus-visible .category-label { color: var(--pink); }
+.category-poster:focus-visible .category-label > span { transform: translateX(2px) rotate(5deg); }
+@media (hover: hover) and (pointer: fine) {
+  :where(:root:not([data-pointer-input="touch"])) .category-poster:hover { transform: translateY(-3px); }
+  :where(:root:not([data-pointer-input="touch"])) .category-poster:hover::before { transform: translate(7px, 11px); }
+  :where(:root:not([data-pointer-input="touch"])) .category-poster:hover .category-label { color: var(--pink); }
+  :where(:root:not([data-pointer-input="touch"])) .category-poster:hover .category-label > span { transform: translateX(2px) rotate(5deg); }
+  :where(:root:not([data-pointer-input="touch"])) .category-keychains:hover .category-artwork { transform: translateY(-5px) rotate(7deg); }
+  :where(:root:not([data-pointer-input="touch"])) .category-pins:hover .category-artwork { transform: translateY(-4px) rotate(-7deg) scale(1.04); }
+  :where(:root:not([data-pointer-input="touch"])) .category-stickers:hover .category-artwork { transform: translate(3px, -6px) rotate(-5deg); }
+  :where(:root:not([data-pointer-input="touch"])) .category-bracelets:hover .category-artwork { transform: translateY(-5px) rotate(9deg); }
+}
+.category-poster:focus-visible .category-artwork { transform: translateY(-4px); }
+.creative-works { position: relative; isolation: isolate; background: var(--pink-deep); color: var(--black); }
+.creative-works::before { content: ''; position: absolute; z-index: -1; inset: 0; background: url('../assets/images/textures/dry-ink.svg') repeat 0 0 / 650px; opacity: .12; mask-image: linear-gradient(90deg, #000, transparent 25%, transparent 80%, #000); pointer-events: none; }
+.works-inner { padding-block: clamp(3.5rem, 7vw, 6rem); }
+.works-heading h2 { font: 400 clamp(2.5rem, 6vw, 5rem)/1.05 var(--font-display); text-transform: uppercase; margin-top: 1rem; }
+.works-filters { display: flex; flex-wrap: wrap; gap: .65rem; margin-block: 2rem; }
+.works-filters button, .works-pagination button, .artwork-views button { min-height: 44px; padding: .6rem .9rem; border: 1px solid var(--black); background: var(--pink); color: var(--black); font: 700 .9rem/1.3 var(--font-body); cursor: pointer; }
+.works-filters button[aria-pressed="true"] { background: var(--black); color: var(--white); box-shadow: 3px 3px 0 var(--white); }
+.works-filters button:hover, .works-pagination button:not(:disabled):hover { background: var(--white); color: var(--black); }
+.works-filters button:focus-visible, .works-pagination button:focus-visible { outline: 3px solid var(--black); outline-offset: 3px; }
+.collection-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.75rem; }
+.collection-heading h3 { margin: 0; font: 400 clamp(1.7rem, 3vw, 2.5rem)/1.2 var(--font-display); }
+#works-status { background: var(--pink-deep); font-size: .85rem; padding: .2rem; }
+.works-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
+.work-card { min-width: 0; background: var(--black); color: var(--white); border: 1px solid var(--white); box-shadow: 5px 6px 0 var(--black); }
+.work-open { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.work-artwork { display: block; overflow: hidden; padding: 1.25rem; background: var(--pink); }
+.work-artwork img { display: block; width: 100%; height: clamp(12rem, 20vw, 18rem); object-fit: contain; transition: transform 250ms ease; }
+.work-label { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 5rem; padding: 1rem; font: 700 .95rem/1.4 var(--font-body); }
+.work-arrow { color: var(--pink); font-size: 1.5rem; }
+/* Keep the black caption panel stable; only the collectible artwork moves. */
+.work-open:focus-visible .work-label { color: var(--pink); }
+.work-open:focus-visible .work-artwork img { transform: translateY(-3px) scale(1.05); }
+@media (hover: hover) and (pointer: fine) {
+  :where(:root:not([data-pointer-input="touch"])) .work-open:hover .work-label { color: var(--pink); }
+  :where(:root:not([data-pointer-input="touch"])) .work-open:hover .work-artwork img { transform: translateY(-3px) scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-artwork img { transition: none; }
+  .work-open:hover .work-artwork img, .work-open:focus-visible .work-artwork img { transform: none; }
+}
+.work-open:focus-visible { outline: 3px solid var(--black); outline-offset: 4px; }
+.works-pagination { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 2.5rem; }
+.works-pagination[hidden] { display: none; }
+.works-pagination button:disabled { opacity: .6; cursor: default; }
+.works-pagination span { font-size: .85rem; }
+.artwork-spotlight h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); overflow-wrap: anywhere; }
+.artwork-spotlight .spotlight-art { background: var(--white); }
+.artwork-spotlight .spotlight-art::before { opacity: .08; }
+.artwork-views { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 1.5rem 2rem; }
+.artwork-views[hidden] { display: none; }
+.artwork-views button { border-color: var(--white); background: var(--black); color: var(--white); }
+.artwork-views button[aria-pressed="true"] { background: var(--pink); color: var(--black); }
+.artwork-views button:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
+.artwork-specification { font-size: .85rem; color: var(--pink); margin-top: 1rem; }
+.artwork-description { margin-top: 1.5rem; font-size: 1rem; line-height: 1.7; }
+.work-fallback-description { padding: 1rem; }
+/* Accommodate the one new navigation link without changing existing sections. */
+@media (max-width: 650px) {
+  .site-header { flex-wrap: wrap; }
+  .site-header nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: .25rem 1rem; }
+  .site-header nav a { display: flex; align-items: center; min-height: 44px; }
+}
+@media (max-width: 1000px) { .works-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .category-picker { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 650px) { .product-development-copy { display: block; } .product-development-copy p { margin-top: 1.5rem; } }
+@media (max-width: 560px) {
+  .works-grid { grid-template-columns: minmax(0, 1fr); }
+  .work-artwork img { height: 15rem; }
+  .category-picker { gap: 1rem; }
+  .category-poster { padding: .75rem; }
+  .category-artwork { height: 8rem; }
+  .works-pagination { gap: .5rem; }
+  .works-pagination button { padding-inline: .65rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .category-poster, .category-poster::before, .category-label, .category-label > span { transition: none; }
+  .category-poster:hover, .category-poster:focus-visible { transform: none; }
+  .category-poster:hover::before, .category-poster:focus-visible::before { transform: translate(4px, 5px); }
+  .category-poster:hover .category-label > span, .category-poster:focus-visible .category-label > span { transform: none; }
+  .category-artwork { transition: none; }
+  .category-poster:hover .category-artwork, .category-poster:focus-visible .category-artwork { transform: none; }
+}
+/* Two-page refinement: backgrounds fill the viewport; inner content remains capped. */
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.75rem; }
+.hero-actions .intro-link { min-width: 12rem; margin-top: 0; }
+.intro-link-secondary { background: transparent; color: var(--pink); }
+.intro-link-secondary:hover { color: var(--black); }
+.site-header nav a:is([aria-current="page"], [aria-current="location"]) { color: var(--pink); text-decoration: underline; }
+section.product-development { isolation: isolate; margin: 0; padding: 0; border: 0; position: relative; clip-path: polygon(0 8px, 10% 0, 24% 7px, 40% 1px, 58% 8px, 74% 0, 90% 7px, 100% 2px, 100% 100%, 0 100%); }
+.product-development-inner { padding-block: clamp(3.5rem, 7vw, 6rem); }
+section.product-development::before { content: ''; position: absolute; z-index: -1; inset: 0; background: url('../assets/images/textures/dry-ink.svg') 0 0 / 550px; opacity: .18; mask-image: linear-gradient(90deg, #000, transparent 30%, transparent 75%, #000); pointer-events: none; }
+section.product-development .product-development-copy { background: var(--pink); }
+section.product-development > .product-development-inner > span { display: block; text-align: right; margin-top: 2rem; font-size: 2rem; line-height: 1; }
+.products-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--black); }
+.products-hero::before { content: ''; position: absolute; z-index: -1; inset: 0; background: url('../assets/images/textures/distressed-surface.svg') center / 850px; filter: invert(1); opacity: .16; mask-image: linear-gradient(100deg, #000, transparent 35%, #000); pointer-events: none; }
+.products-hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-block: 4rem; }
+.products-hero-copy .eyebrow { color: var(--pink); }
+.products-hero h1 { font: 400 clamp(3rem, 7vw, 6.5rem)/1.02 var(--font-display); text-transform: uppercase; margin: 1rem 0 1.5rem; }
+.products-hero h1 span { color: var(--pink); }
+.products-hero-copy > p:not(.eyebrow) { max-width: 40ch; font-size: 1.1rem; }
+.products-page .works-heading h2 { font-size: clamp(2rem, 7vw, 6rem); max-width: 16ch; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+@media (max-width: 760px) {
+  .products-hero-inner { grid-template-columns: minmax(0, 1fr); padding-block: 3rem; }
+      }
+.product-development h2 { font: 400 clamp(1.7rem, 2.7vw, 2.6rem)/1.15 var(--font-display); margin: 0; }
+
+/* Transparent foreground retains dark outlines without black color-keying.
+   No image opacity, color filters, or rectangular background panel. */
+/* Reserve grid space; offset the art through the inner bottom padding to the hero edge. */
+.products-hero-artwork { min-width: 0; position: relative; align-self: stretch; min-height: clamp(280px, 30vw, 440px); pointer-events: none; }
+.products-hero-artwork img { position: absolute; display: block; width: 150%; max-width: none; height: auto; right: -25%; top: auto; bottom: -4rem; }
+@media (max-width: 760px) {
+  .products-hero-artwork { min-height: clamp(190px, 58vw, 440px); }
+  .products-hero-artwork img { width: 125%; right: -12.5%; bottom: -3rem; }
+}
+.products-hero .intro-link { position: relative; isolation: isolate; background: transparent; border-color: transparent; margin-right: .75rem; transition: transform 200ms ease; }
+.products-hero .intro-link::before, .products-hero .intro-link::after { content: ''; position: absolute; inset: -2px; pointer-events: none; transition: transform 200ms ease; }
+.products-hero .intro-link::before { z-index: -2; background: var(--white); transform: translate(4px, 5px); }
+.products-hero .intro-link::after { z-index: -1; background: var(--pink); }
+.products-hero .intro-link > span { transition: transform 200ms ease; }
+.products-hero .intro-link:focus-visible { transform: translate(2px, 3px); outline: 3px solid var(--white); outline-offset: 5px; }
+.products-hero .intro-link:focus-visible::before { transform: translate(2px, 2px); }
+.products-hero .intro-link:focus-visible > span { transform: translateY(2px); }
+@media (hover: hover) and (pointer: fine) {
+  .products-hero .intro-link:hover { transform: translate(2px, 3px); }
+  .products-hero .intro-link:hover::before { transform: translate(2px, 2px); }
+  .products-hero .intro-link:hover > span { transform: translateY(2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .products-hero .intro-link, .products-hero .intro-link::before, .products-hero .intro-link::after, .products-hero .intro-link > span { transition: none; }
+  .products-hero .intro-link:hover, .products-hero .intro-link:focus-visible, .products-hero .intro-link:hover > span, .products-hero .intro-link:focus-visible > span { transform: none; }
+  .products-hero .intro-link:hover::before, .products-hero .intro-link:focus-visible::before { transform: translate(4px, 5px); }
+}
+
+
+/* Match the Products CTA press without changing the homepage button layout. */
+.hero-actions .intro-link[href="#introduction"] { position: relative; isolation: isolate; background: transparent; border-color: transparent; transition: transform 200ms ease; }
+.hero-actions .intro-link[href="#introduction"]::before, .hero-actions .intro-link[href="#introduction"]::after { content: ''; position: absolute; inset: -2px; pointer-events: none; transition: transform 200ms ease; }
+.hero-actions .intro-link[href="#introduction"]::before { z-index: -2; background: var(--white); transform: translate(4px, 5px); }
+.hero-actions .intro-link[href="#introduction"]::after { z-index: -1; background: var(--pink); }
+.hero-actions .intro-link[href="#introduction"] > span { transition: transform 200ms ease; }
+.hero-actions .intro-link[href="#introduction"]:focus-visible { transform: translate(2px, 3px); outline: 3px solid var(--white); outline-offset: 5px; }
+.hero-actions .intro-link[href="#introduction"]:focus-visible::before { transform: translate(2px, 2px); }
+.hero-actions .intro-link[href="#introduction"]:focus-visible > span { transform: translateY(2px); }
+@media (hover: hover) and (pointer: fine) {
+  .hero-actions .intro-link[href="#introduction"]:hover { transform: translate(2px, 3px); }
+  .hero-actions .intro-link[href="#introduction"]:hover::before { transform: translate(2px, 2px); }
+  .hero-actions .intro-link[href="#introduction"]:hover > span { transform: translateY(2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-actions .intro-link[href="#introduction"], .hero-actions .intro-link[href="#introduction"]::before, .hero-actions .intro-link[href="#introduction"]::after, .hero-actions .intro-link[href="#introduction"] > span { transition: none; }
+  .hero-actions .intro-link[href="#introduction"]:hover, .hero-actions .intro-link[href="#introduction"]:focus-visible, .hero-actions .intro-link[href="#introduction"]:hover > span, .hero-actions .intro-link[href="#introduction"]:focus-visible > span { transform: none; }
+  .hero-actions .intro-link[href="#introduction"]:hover::before, .hero-actions .intro-link[href="#introduction"]:focus-visible::before { transform: translate(4px, 5px); }
+}
+
+
+/* One shallow torn edge for every major section transition on both pages.
+   Overlap only the decorative edge, so the preceding surface shows through.
+   Direct children exclude department groups and other nested content. */
+main > section:not(:first-of-type) {
+  margin-top: -8px;
+  clip-path: polygon(0 8px, 10% 0, 24% 7px, 40% 1px, 58% 8px, 74% 0, 90% 7px, 100% 2px, 100% 100%, 0 100%);
+}
+
+.product-development-copy > header .eyebrow { margin: 0 0 1rem; font-size: .7rem; line-height: 1.6; }
+
+/* Keep the description secondary, with a little more presence and breathing room. */
+.product-development-copy > p { font-size: 1.05rem; }
+@media (min-width: 651px) {
+  .product-development-copy > p { margin-top: 1.5rem; margin-right: clamp(1rem, 2vw, 2rem); }
+}
+
+/* Match the homepage viewport framing, retaining the bottom-anchored artwork. */
+@media (min-width: 761px) {
+  .products-hero-inner { min-height: calc(100svh - var(--hero-header-height, 87px) + 8px); }
+}
+
+/* Center the oversized foreground with the text, instead of pinning it below the row. */
+@media (min-width: 761px) {
+  .products-hero-artwork { display: grid; align-self: center; place-items: center; }
+  .products-hero-artwork img { position: static; justify-self: end; margin-inline-end: calc(-1 * clamp(0px, calc((100vw - var(--content-width)) / 2 + var(--gutter)), 25%)); }
+}
