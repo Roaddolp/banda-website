@@ -16,21 +16,23 @@
   <link rel="stylesheet" href="css/works.css">
   <link rel="stylesheet" href="css/team.css">
   <link rel="stylesheet" href="css/enhancements.css">
+  <link rel="stylesheet" href="css/exhibition.css">
   <script src="js/main.js" defer></script>
   <script src="js/enhancements.js" defer></script>
   <script src="js/sketch-pendulum.js" defer></script>
   <script src="js/dialog.js" defer></script>
   <script src="js/characters.js" defer></script>
+  <script src="js/exhibition.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="BANDA! home"><img src="assets/images/brand/banda-wordmark.webp" alt="" width="1200" height="597"></a>
     <nav aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Home</a>
       <a href="index.html#introduction">Meet the Noise</a>
       <a href="products.html">Merch</a>
       <a href="index.html#development">Background</a>
+      <a href="index.html#exhibition">Exhibition</a>
       <a href="index.html#about">About</a>
       <a href="index.html#contact">Contact</a>
     </nav>
@@ -179,6 +181,45 @@
           <a class="category-poster category-bracelets" href="products.html?category=bracelets" data-discover="bracelets"><img class="category-artwork" src="assets/images/artifacts/cherry-bomb.webp" alt="Cherry Bomb bracelet artwork" width="411" height="420" loading="lazy" decoding="async"><span class="category-label">Bracelets <span aria-hidden="true">↗</span></span></a>
         </div>
         <span aria-hidden="true">✳</span>
+      </div>
+    </section>
+
+    <section class="exhibition" id="exhibition" aria-labelledby="exhibition-title">
+      <div class="section-inner exhibition-inner">
+        <header class="exhibition-heading"><p class="eyebrow">BANDA!</p><h2 id="exhibition-title">BEHIND<br><span>THE NOISE.</span></h2><p>A visual journey through the BANDA! exhibition.</p></header>
+        <div class="exhibition-gallery exhibition-marquee" data-manifest="js/data/exhibition.json">
+          <div class="exhibition-marquee-viewport" id="exhibition-viewport" role="group" aria-label="Exhibition photographs in chronological order. Use arrow keys to browse." tabindex="0">
+            <div class="exhibition-marquee-track">
+              <div class="exhibition-marquee-group" role="list">
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="1"><img src="assets/images/exhibition/01-preparation-01-small.webp" width="1080" height="720" alt="Hands sorting character merchandise, button pins, and beaded bracelets on a table." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="2"><img src="assets/images/exhibition/02-preparation-02-small.webp" width="1080" height="720" alt="A person working on a blue panda-shaped cutout on the floor." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="3"><img src="assets/images/exhibition/03-booth-01-small.webp" width="1080" height="720" alt="Close-up of the BANDA! wordmark on the curved black booth display." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="4"><img src="assets/images/exhibition/04-booth-02-small.webp" width="720" height="1080" alt="People posing behind the BANDA! booth and its merchandise display." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="5"><img src="assets/images/exhibition/05-showcase-01-small.webp" width="1080" height="720" alt="Character stickers displayed in a clear stand, including the blue Keep Quiet design." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="6"><img src="assets/images/exhibition/06-showcase-02-small.webp" width="1080" height="720" alt="Colorful beaded bracelets hanging from a black display stand." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="7"><img src="assets/images/exhibition/07-showcase-03-small.webp" width="1080" height="720" alt="A person pointing to button pins attached to a pink Multimedia Arts lanyard." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="8"><img src="assets/images/exhibition/08-social-01-small.webp" width="720" height="1080" alt="Visitors gathered around the booth table looking at the merchandise." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="9"><img src="assets/images/exhibition/09-social-02-small.webp" width="720" height="1080" alt="Two people looking over booth merchandise, one wearing a pink bandana." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="10"><img src="assets/images/exhibition/10-social-03-small.webp" width="720" height="1080" alt="Three people posing in front of the BANDA! booth." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="11"><img src="assets/images/exhibition/11-social-04-small.webp" width="720" height="1080" alt="Visitors posing beside the BANDA! booth and product display." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="12"><img src="assets/images/exhibition/12-social-05-small.webp" width="720" height="1080" alt="A visitor leaning over the clear merchandise display to look at the designs." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="13"><img src="assets/images/exhibition/13-social-06-small.webp" width="720" height="1080" alt="Two visitors posing with hand signs beside the BANDA! booth." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="14"><img src="assets/images/exhibition/14-instruments-01-small.webp" width="720" height="1080" alt="Bass guitars and panda plush toys arranged in front of a seated person." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="15"><img src="assets/images/exhibition/15-instruments-02-small.webp" width="1080" height="720" alt="Hands playing a keyboard beneath a handwritten Play Me sign." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="16"><img src="assets/images/exhibition/16-instruments-03-small.webp" width="1080" height="720" alt="A panda plush toy attached to a bass guitar under blue and pink lighting." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="17"><img src="assets/images/exhibition/17-entertainment-01-small.webp" width="720" height="1080" alt="A person wearing a pink bandana holding a white electric bass guitar." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="18"><img src="assets/images/exhibition/18-entertainment-02-small.webp" width="720" height="1080" alt="A person in sunglasses and a red plaid shirt playing a keyboard." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="19"><img src="assets/images/exhibition/19-entertainment-03-small.webp" width="1080" height="720" alt="A person singing into a microphone beside the exhibition booths." loading="lazy" decoding="async"></figure>
+                <figure class="exhibition-marquee-photo" role="listitem" data-photo-sequence="20"><img src="assets/images/exhibition/20-group-pic-01-small.webp" width="1080" height="720" alt="A group posing together beside the BANDA! booth and merchandise table." loading="lazy" decoding="async"></figure>
+              </div>
+            </div>
+          </div>
+          <div class="exhibition-marquee-controls" hidden>
+            <button id="exhibition-toggle" type="button" aria-controls="exhibition-viewport" aria-label="Pause photo movement"><span class="marquee-toggle-icon" aria-hidden="true">⏸</span></button>
+          </div>
+          <p class="sr-only" id="exhibition-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+          <p class="exhibition-error" role="alert" hidden></p>
+        </div>
       </div>
     </section>
 

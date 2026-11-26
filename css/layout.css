@@ -16,8 +16,9 @@
 .intro-body > p + p { margin-top: 1.5rem; }
 .site-footer { padding: 1.5rem var(--gutter); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 /* The extra 8px sits beneath the overlapping torn edge of the next section. */
+/* Cap unusually tall desktop-site viewports; landscape desktops keep their full viewport height. */
 @media (min-width: 761px) {
-  .hero-inner { min-height: calc(100svh - var(--hero-header-height, 87px) + 8px); grid-template-rows: minmax(min-content, 1fr) auto; row-gap: 2rem; }
+  .hero-inner { min-height: calc(min(100svh, 100vw) - var(--hero-header-height, 87px) + 8px); grid-template-rows: minmax(min-content, 1fr) auto; row-gap: 2rem; }
   .hero-copy { padding-bottom: 0; }
   .hero .character-collage { margin-block: 0; }
 }

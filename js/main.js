@@ -21,7 +21,7 @@ document.querySelectorAll('a[href]').forEach(link => {
 // Product pages keep their existing page-level active state.
 if (document.querySelector('.hero#home')) {
   const nav = document.querySelector('.site-header nav');
-  const sections = ['home', 'introduction', 'development', 'about', 'contact'].map(id => document.getElementById(id)).filter(Boolean);
+  const sections = ['home', 'introduction', 'development', 'exhibition', 'about', 'contact'].map(id => document.getElementById(id)).filter(Boolean);
   const links = [...nav.querySelectorAll('a')];
   let frame = 0;
   function updateSection() {

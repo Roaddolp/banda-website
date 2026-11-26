@@ -111,3 +111,26 @@ Public distribution of brand assets is subject to the approval of their respecti
 ---
 
 Developed by Rodolfo Quim Jr.
+
+## BANDA! v1.1 — Task 5: functional exhibition gallery
+
+`index.html#exhibition` sits after Product Design & Development and before About. It loads the prepared `js/data/exhibition.json` manifest; the image count is derived from its image entries (currently 20 across seven chapters). Existing navigation is unchanged.
+
+- `css/exhibition.css`: responsive, fixed-height photo frame with contain sizing, metadata, and semantic controls. No stack transforms, rotations, or photo transitions.
+- `js/exhibition.js`: sequential Previous/Next/Replay state, responsive image decoding before each swap, in-flight request guard, polite announcements, and focus preservation. Load failures leave the current image/index intact and allow retry.
+- Without JavaScript or if the manifest cannot load, the first photograph and an ordered expandable list of all 20 image links remain available. Use the local HTTP preview workflow above for the interactive gallery.
+- The final Group Pic remains visible; Next is disabled, and Replay returns to Preparation. Previous is disabled at the first photograph. Mobile control space is reserved to keep Replay from shifting the layout.
+
+Verified: every photograph and chapter in forward/reverse order; first/last bounds; Replay; rapid input; failed-load/retry handling; mouse, keyboard and touch; 320, 375, 768 and 1440px layouts; no horizontal overflow; no normal-load console errors or broken resources; no-JS fallback; and existing character/category interactions. Products Page bytes remain unchanged. Desktop/mobile previews: `review/exhibition-functional-1440.png`, `review/exhibition-functional-375.png`.
+
+Checkpoint: `../checkpoints/before-functional-exhibition.zip`. Task 6 card-stack animations are intentionally not implemented.
+
+## Current exhibition: continuous photo marquee
+
+The active `index.html#exhibition` now shows all 20 prepared photographs in manifest order in a continuous right-to-left row. Pause/Play preserves the current position. Touching or focusing the strip pauses motion for native horizontal browsing; keyboard Left/Right/Home/End also browse the photos. Reduced-motion mode disables autoplay and leaves a single static, scrollable group. Without JavaScript, the original HTML photo strip remains usable.
+
+The seamless loop uses one inert, aria-hidden duplicate group; a group's measured width includes its final gap. A frame-rate-independent scroll position wraps by exactly that width. The first four small WebPs decode before enhancement; remaining prepared images load lazily.
+
+The previous working photo-deck site is preserved outside this Git repository at `../archives/exhibition-card-stack-v1.zip`. Extract it into its own folder and serve that extracted root using the Run instructions above. ZIP integrity, source hashes, all referenced assets, independent archived-site photo navigation, 480ms animations, Replay, and Products interactions were verified before conversion.
+
+Marquee verification: all 20 photos in both loop groups; native image decoding; identical loop geometry; Pause/Play; seam crossing; keyboard/touch panning; no-JS fallback; reduced motion; 320, 375, 768 and 1440px layouts; no browser errors or page-wide horizontal overflow. The Products Page and unrelated homepage sections are unchanged. Physical-device visual/performance review remains recommended.

@@ -1,0 +1,450 @@
+{
+  "version": 1,
+  "pathBase": "website root",
+  "chapters": [
+    {
+      "id": "preparation",
+      "title": "Preparation",
+      "sequence": 1,
+      "count": 2
+    },
+    {
+      "id": "booth",
+      "title": "Booth",
+      "sequence": 2,
+      "count": 2
+    },
+    {
+      "id": "showcase",
+      "title": "Showcase",
+      "sequence": 3,
+      "count": 3
+    },
+    {
+      "id": "social",
+      "title": "Social",
+      "sequence": 4,
+      "count": 6
+    },
+    {
+      "id": "instruments",
+      "title": "Instruments",
+      "sequence": 5,
+      "count": 3
+    },
+    {
+      "id": "entertainment",
+      "title": "Entertainment",
+      "sequence": 6,
+      "count": 3
+    },
+    {
+      "id": "group-pic",
+      "title": "Group Pic",
+      "sequence": 7,
+      "count": 1
+    }
+  ],
+  "images": [
+    {
+      "id": "exhibition-01",
+      "chapter": "Preparation",
+      "chapterId": "preparation",
+      "sequence": 1,
+      "chapterPosition": 1,
+      "sourceFilename": "preparation.jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/01-preparation-01.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 281080,
+      "mobile": {
+        "src": "assets/images/exhibition/01-preparation-01-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 97260
+      },
+      "alt": "Hands sorting character merchandise, button pins, and beaded bracelets on a table."
+    },
+    {
+      "id": "exhibition-02",
+      "chapter": "Preparation",
+      "chapterId": "preparation",
+      "sequence": 2,
+      "chapterPosition": 2,
+      "sourceFilename": "preparation (2).jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/02-preparation-02.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 110220,
+      "mobile": {
+        "src": "assets/images/exhibition/02-preparation-02-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 36172
+      },
+      "alt": "A person working on a blue panda-shaped cutout on the floor."
+    },
+    {
+      "id": "exhibition-03",
+      "chapter": "Booth",
+      "chapterId": "booth",
+      "sequence": 3,
+      "chapterPosition": 1,
+      "sourceFilename": "booth.jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/03-booth-01.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 121104,
+      "mobile": {
+        "src": "assets/images/exhibition/03-booth-01-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 36810
+      },
+      "alt": "Close-up of the BANDA! wordmark on the curved black booth display."
+    },
+    {
+      "id": "exhibition-04",
+      "chapter": "Booth",
+      "chapterId": "booth",
+      "sequence": 4,
+      "chapterPosition": 2,
+      "sourceFilename": "booth(2).jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/04-booth-02.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 306358,
+      "mobile": {
+        "src": "assets/images/exhibition/04-booth-02-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 96464
+      },
+      "alt": "People posing behind the BANDA! booth and its merchandise display."
+    },
+    {
+      "id": "exhibition-05",
+      "chapter": "Showcase",
+      "chapterId": "showcase",
+      "sequence": 5,
+      "chapterPosition": 1,
+      "sourceFilename": "showcase.jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/05-showcase-01.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 187466,
+      "mobile": {
+        "src": "assets/images/exhibition/05-showcase-01-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 59348
+      },
+      "alt": "Character stickers displayed in a clear stand, including the blue Keep Quiet design."
+    },
+    {
+      "id": "exhibition-06",
+      "chapter": "Showcase",
+      "chapterId": "showcase",
+      "sequence": 6,
+      "chapterPosition": 2,
+      "sourceFilename": "showcase (2).jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/06-showcase-02.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 166438,
+      "mobile": {
+        "src": "assets/images/exhibition/06-showcase-02-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 63952
+      },
+      "alt": "Colorful beaded bracelets hanging from a black display stand."
+    },
+    {
+      "id": "exhibition-07",
+      "chapter": "Showcase",
+      "chapterId": "showcase",
+      "sequence": 7,
+      "chapterPosition": 3,
+      "sourceFilename": "showcase(3).CR2",
+      "sourceRender": "embedded-camera-jpeg",
+      "src": "assets/images/exhibition/07-showcase-03.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 66768,
+      "mobile": {
+        "src": "assets/images/exhibition/07-showcase-03-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 20720
+      },
+      "alt": "A person pointing to button pins attached to a pink Multimedia Arts lanyard."
+    },
+    {
+      "id": "exhibition-08",
+      "chapter": "Social",
+      "chapterId": "social",
+      "sequence": 8,
+      "chapterPosition": 1,
+      "sourceFilename": "social.JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/08-social-01.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 113366,
+      "mobile": {
+        "src": "assets/images/exhibition/08-social-01-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 47046
+      },
+      "alt": "Visitors gathered around the booth table looking at the merchandise."
+    },
+    {
+      "id": "exhibition-09",
+      "chapter": "Social",
+      "chapterId": "social",
+      "sequence": 9,
+      "chapterPosition": 2,
+      "sourceFilename": "social (3).JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/09-social-02.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 150776,
+      "mobile": {
+        "src": "assets/images/exhibition/09-social-02-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 60546
+      },
+      "alt": "Two people looking over booth merchandise, one wearing a pink bandana."
+    },
+    {
+      "id": "exhibition-10",
+      "chapter": "Social",
+      "chapterId": "social",
+      "sequence": 10,
+      "chapterPosition": 3,
+      "sourceFilename": "social (4).JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/10-social-03.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 109752,
+      "mobile": {
+        "src": "assets/images/exhibition/10-social-03-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 38948
+      },
+      "alt": "Three people posing in front of the BANDA! booth."
+    },
+    {
+      "id": "exhibition-11",
+      "chapter": "Social",
+      "chapterId": "social",
+      "sequence": 11,
+      "chapterPosition": 4,
+      "sourceFilename": "social (5).JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/11-social-04.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 157282,
+      "mobile": {
+        "src": "assets/images/exhibition/11-social-04-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 62826
+      },
+      "alt": "Visitors posing beside the BANDA! booth and product display."
+    },
+    {
+      "id": "exhibition-12",
+      "chapter": "Social",
+      "chapterId": "social",
+      "sequence": 12,
+      "chapterPosition": 5,
+      "sourceFilename": "social (6).JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/12-social-05.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 87222,
+      "mobile": {
+        "src": "assets/images/exhibition/12-social-05-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 36414
+      },
+      "alt": "A visitor leaning over the clear merchandise display to look at the designs."
+    },
+    {
+      "id": "exhibition-13",
+      "chapter": "Social",
+      "chapterId": "social",
+      "sequence": 13,
+      "chapterPosition": 6,
+      "sourceFilename": "social (7).JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/13-social-06.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 77296,
+      "mobile": {
+        "src": "assets/images/exhibition/13-social-06-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 31368
+      },
+      "alt": "Two visitors posing with hand signs beside the BANDA! booth."
+    },
+    {
+      "id": "exhibition-14",
+      "chapter": "Instruments",
+      "chapterId": "instruments",
+      "sequence": 14,
+      "chapterPosition": 1,
+      "sourceFilename": "instruments.JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/14-instruments-01.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 120980,
+      "mobile": {
+        "src": "assets/images/exhibition/14-instruments-01-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 45880
+      },
+      "alt": "Bass guitars and panda plush toys arranged in front of a seated person."
+    },
+    {
+      "id": "exhibition-15",
+      "chapter": "Instruments",
+      "chapterId": "instruments",
+      "sequence": 15,
+      "chapterPosition": 2,
+      "sourceFilename": "instruments(2).CR2",
+      "sourceRender": "embedded-camera-jpeg",
+      "src": "assets/images/exhibition/15-instruments-02.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 154308,
+      "mobile": {
+        "src": "assets/images/exhibition/15-instruments-02-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 57760
+      },
+      "alt": "Hands playing a keyboard beneath a handwritten Play Me sign."
+    },
+    {
+      "id": "exhibition-16",
+      "chapter": "Instruments",
+      "chapterId": "instruments",
+      "sequence": 16,
+      "chapterPosition": 3,
+      "sourceFilename": "instruments(3).CR2",
+      "sourceRender": "embedded-camera-jpeg",
+      "src": "assets/images/exhibition/16-instruments-03.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 92506,
+      "mobile": {
+        "src": "assets/images/exhibition/16-instruments-03-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 34400
+      },
+      "alt": "A panda plush toy attached to a bass guitar under blue and pink lighting."
+    },
+    {
+      "id": "exhibition-17",
+      "chapter": "Entertainment",
+      "chapterId": "entertainment",
+      "sequence": 17,
+      "chapterPosition": 1,
+      "sourceFilename": "entertainment.JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/17-entertainment-01.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 113202,
+      "mobile": {
+        "src": "assets/images/exhibition/17-entertainment-01-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 47078
+      },
+      "alt": "A person wearing a pink bandana holding a white electric bass guitar."
+    },
+    {
+      "id": "exhibition-18",
+      "chapter": "Entertainment",
+      "chapterId": "entertainment",
+      "sequence": 18,
+      "chapterPosition": 2,
+      "sourceFilename": "entertainment (2).JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/18-entertainment-02.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 138894,
+      "mobile": {
+        "src": "assets/images/exhibition/18-entertainment-02-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 58410
+      },
+      "alt": "A person in sunglasses and a red plaid shirt playing a keyboard."
+    },
+    {
+      "id": "exhibition-19",
+      "chapter": "Entertainment",
+      "chapterId": "entertainment",
+      "sequence": 19,
+      "chapterPosition": 3,
+      "sourceFilename": "entertainment (3).JPG",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/19-entertainment-03.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 113954,
+      "mobile": {
+        "src": "assets/images/exhibition/19-entertainment-03-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 45764
+      },
+      "alt": "A person singing into a microphone beside the exhibition booths."
+    },
+    {
+      "id": "exhibition-20",
+      "chapter": "Group Pic",
+      "chapterId": "group-pic",
+      "sequence": 20,
+      "chapterPosition": 1,
+      "sourceFilename": "group pic.jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/20-group-pic-01.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 231808,
+      "mobile": {
+        "src": "assets/images/exhibition/20-group-pic-01-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 84784
+      },
+      "alt": "A group posing together beside the BANDA! booth and merchandise table."
+    }
+  ]
+}
