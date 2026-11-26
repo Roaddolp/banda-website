@@ -189,10 +189,22 @@ main > section:not(:first-of-type) {
 .product-development-description { min-width: 0; max-width: 64ch; padding-top: 2.1rem; }
 .product-development-description > p { max-width: none; margin: 0; font-size: 1.05rem; line-height: 1.75; }
 .product-development-description > p + p { margin-top: 1.15rem; }
-.product-development .category-picker { margin-top: clamp(2.5rem, 4vw, 3.5rem); }
+/* Read from the introduction through the artwork, then the two-part design narrative. */
+.product-development-copy { row-gap: 1.5rem; }
+.product-development .category-picker { margin-top: clamp(2.5rem, 3.5vw, 3rem); }
+.product-development-story { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; margin-top: clamp(2rem, 4vw, 3.5rem); }
+.product-development-story > p { min-width: 0; max-width: 56ch; margin: 0; font-size: 1.05rem; line-height: 1.75; }
+.product-development-story > p + p { padding-top: clamp(1.5rem, 4vw, 3.5rem); }
 @media (max-width: 900px) {
-  .product-development-copy { display: block; }
+  .product-development-copy, .product-development-story { display: block; }
   .product-development-description { padding-top: 0; margin-top: 1.5rem; }
+  .product-development-story > p + p { padding-top: 0; margin-top: 1.15rem; }
+}
+
+/* Use a little more of the existing right column without changing its alignment. */
+@media (min-width: 901px) {
+  .product-development-copy > .product-development-description { max-width: 68ch; }
+  .product-development-story > p + p { max-width: 60ch; padding-top: clamp(1.5rem, 3.5vw, 3rem); }
 }
 
 /* Match the homepage viewport framing, retaining the bottom-anchored artwork. */
