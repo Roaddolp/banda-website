@@ -31,7 +31,7 @@ Built with semantic HTML, CSS, and vanilla JavaScript, the website operates with
 | Home | Brand introduction and visual identity |
 | Merch | Interactive merchandise and artwork showcase |
 | Meet the Noise | Original character profiles |
-| Design Development | Creative process, sketches, and logo development |
+| Background | Creative process, sketches, and logo development |
 | About | The creative team behind BANDA! |
 | Contact | Contact information and communication channels |
 
