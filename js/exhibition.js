@@ -4,16 +4,12 @@
   if (!gallery) return;
   const viewport = gallery.querySelector('.exhibition-marquee-viewport');
   const track = gallery.querySelector('.exhibition-marquee-track');
-  const controls = gallery.querySelector('.exhibition-marquee-controls');
-  const toggle = gallery.querySelector('#exhibition-toggle');
-  const icon = toggle.querySelector('.marquee-toggle-icon');
-  const status = gallery.querySelector('#exhibition-announcement');
   const error = gallery.querySelector('.exhibition-error');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const speed = 24;
-  let paused = motion.matches, visible = false, started = false, ready = false;
+  let paused = false, visible = false, started = false, ready = false;
   let group, cycleWidth = 0, frame = 0, lastTime = 0, position = 0;
-  let drag = null;
+  let drag = null, wheelTimer = 0;
   const wrap = value => ((value % cycleWidth) + cycleWidth) % cycleWidth;
   function showPosition(value) {
     if (!cycleWidth) return;
@@ -21,7 +17,7 @@
     // Keep the real group between identical copies: either boundary can wrap invisibly.
     viewport.scrollLeft = cycleWidth + position;
   }
-  function canMove() { return ready && visible && !paused && !motion.matches && !document.hidden && cycleWidth > viewport.clientWidth; }
+  function canMove() { return ready && visible && !paused && !drag && !motion.matches && !document.hidden && cycleWidth > viewport.clientWidth; }
   function tick(now) {
     frame = 0;
     if (!canMove()) { lastTime = 0; return; }
@@ -37,16 +33,15 @@
     frame = 0;
     lastTime = 0;
     gallery.classList.toggle('is-reduced', motion.matches);
-    toggle.disabled = motion.matches;
-    icon.textContent = paused || motion.matches ? '▶' : '⏸';
-    toggle.setAttribute('aria-label', motion.matches ? 'Photo movement paused for reduced motion' : paused ? 'Play photo movement' : 'Pause photo movement');
     if (canMove()) frame = requestAnimationFrame(tick);
   }
-  function setPaused(value, announce = false) {
-    const changed = paused !== value;
+  function setPaused(value) {
     paused = value;
     sync();
-    if (announce && changed) status.textContent = paused ? 'Photo movement paused.' : 'Photo movement playing.';
+  }
+  function resumeAfterInteraction() {
+    // Keyboard users can inspect a stationary strip until focus leaves it.
+    setPaused(document.activeElement === viewport && viewport.matches(':focus-visible'));
   }
   function measure() {
     if (!group) return;
@@ -58,11 +53,11 @@
     }
     sync();
   }
-  toggle.addEventListener('click', () => setPaused(!paused, true));
   viewport.addEventListener('dragstart', event => event.preventDefault());
   viewport.addEventListener('pointerdown', event => {
     if (!ready || !event.isPrimary || event.button !== 0) return;
-    setPaused(true, true);
+    clearTimeout(wheelTimer);
+    setPaused(true);
     drag = { id: event.pointerId, x: event.clientX, y: event.clientY, lastX: event.clientX, locked: false };
   });
   viewport.addEventListener('pointermove', event => {
@@ -83,6 +78,7 @@
     if (viewport.hasPointerCapture(drag.id)) viewport.releasePointerCapture(drag.id);
     drag = null;
     gallery.classList.remove('is-dragging');
+    resumeAfterInteraction();
   }
   window.addEventListener('pointerup', endDrag);
   window.addEventListener('pointercancel', endDrag);
@@ -93,8 +89,14 @@
   viewport.addEventListener('scroll', () => {
     if (ready && paused && !drag) showPosition(viewport.scrollLeft - cycleWidth);
   }, { passive: true });
-  viewport.addEventListener('focusin', () => setPaused(true));
-  viewport.addEventListener('wheel', event => { if (event.deltaX || event.shiftKey) setPaused(true); }, { passive: true });
+  viewport.addEventListener('focusin', () => { if (!drag) setPaused(true); });
+  viewport.addEventListener('focusout', () => { if (!drag) setPaused(false); });
+  viewport.addEventListener('wheel', event => {
+    if (!event.deltaX && !event.shiftKey) return;
+    setPaused(true);
+    clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(resumeAfterInteraction, 180);
+  }, { passive: true });
   viewport.addEventListener('keydown', event => {
     if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
@@ -104,7 +106,7 @@
     else showPosition(position + (event.key === 'ArrowRight' ? 1 : -1) * Math.max(100, viewport.clientWidth * .4));
   });
   document.addEventListener('visibilitychange', sync);
-  motion.addEventListener('change', () => { if (motion.matches) paused = true; sync(); measure(); });
+  motion.addEventListener('change', measure);
   async function initialize() {
     if (started) return;
     started = true;
@@ -143,7 +145,6 @@
       track.replaceChildren(clone.cloneNode(true), group, clone);
       gallery.classList.add('is-enhanced');
       ready = true;
-      controls.hidden = false;
       measure();
       if ('ResizeObserver' in window) {
         const resize = new ResizeObserver(measure);
