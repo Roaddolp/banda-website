@@ -66,7 +66,7 @@
     const touch = event.pointerType === 'touch' || event.pointerType === 'pen';
     document.documentElement.dataset.pointerInput = touch ? 'touch' : 'mouse';
     if (!touch || !event.isPrimary) return;
-    const control = event.target.closest('.character-trigger, .category-poster, .work-open');
+    const control = event.target.closest('.character-trigger, .category-poster, .work-open, .paper-link');
     if (!control) return;
     const node = control.matches('.character-trigger') ? control.closest('.character-poster') : control;
     press = { node, id: event.pointerId, x: event.clientX, y: event.clientY };
@@ -91,7 +91,7 @@
 
   if (!('IntersectionObserver' in window)) return;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const selector = '.hero-copy > *, .products-hero-copy > *, .intro-heading, .character-poster, .development-heading, .process-copy, .sketch-board, .digital-mount, .elements-mount, .wordmark-finale > *, .product-development-copy > *, .category-poster, .team-heading, .department, .contact-heading, .contact-action, .works-heading, .work-card';
+  const selector = '.hero-copy > *, .products-hero-copy > *, .intro-heading, .character-poster, .development-heading, .process-copy, .sketch-board, .digital-mount, .elements-mount, .wordmark-finale > *, .product-development-copy > *, .category-poster, .team-heading, .department, .contact-heading, .contact-action, .works-heading, .work-card, .merch-store-heading, .merch-store-copy';
   const tracked = new Set();
   let enterObserver, exitObserver, changes;
   function stop() {

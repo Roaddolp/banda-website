@@ -134,23 +134,23 @@ section.product-development > .product-development-inner > span { display: block
   .products-hero-artwork { min-height: clamp(190px, 58vw, 440px); }
   .products-hero-artwork img { width: 125%; right: -12.5%; bottom: -3rem; }
 }
-.products-hero .intro-link { position: relative; isolation: isolate; background: transparent; border-color: transparent; margin-right: .75rem; transition: transform 200ms ease; }
-.products-hero .intro-link::before, .products-hero .intro-link::after { content: ''; position: absolute; inset: -2px; pointer-events: none; transition: transform 200ms ease; }
-.products-hero .intro-link::before { z-index: -2; background: var(--white); transform: translate(4px, 5px); }
-.products-hero .intro-link::after { z-index: -1; background: var(--pink); }
-.products-hero .intro-link > span { transition: transform 200ms ease; }
-.products-hero .intro-link:focus-visible { transform: translate(2px, 3px); outline: 3px solid var(--white); outline-offset: 5px; }
-.products-hero .intro-link:focus-visible::before { transform: translate(2px, 2px); }
-.products-hero .intro-link:focus-visible > span { transform: translateY(2px); }
+.intro-link.paper-link { position: relative; isolation: isolate; background: transparent; border-color: transparent; transition: transform 200ms ease; }
+.intro-link.paper-link::before, .intro-link.paper-link::after { content: ''; position: absolute; inset: -2px; pointer-events: none; transition: transform 200ms ease; }
+.intro-link.paper-link::before { z-index: -2; background: var(--white); transform: translate(4px, 5px); }
+.intro-link.paper-link::after { z-index: -1; background: var(--pink); }
+.intro-link.paper-link > span { transition: transform 200ms ease; }
+.intro-link.paper-link:focus-visible { transform: translate(2px, 3px); outline: 3px solid var(--white); outline-offset: 5px; }
+.intro-link.paper-link:focus-visible::before { transform: translate(2px, 2px); }
+.intro-link.paper-link:focus-visible > span { transform: translate(var(--paper-arrow-x, 0px), var(--paper-arrow-y, 2px)); }
 @media (hover: hover) and (pointer: fine) {
-  .products-hero .intro-link:hover { transform: translate(2px, 3px); }
-  .products-hero .intro-link:hover::before { transform: translate(2px, 2px); }
-  .products-hero .intro-link:hover > span { transform: translateY(2px); }
+  .intro-link.paper-link:hover { transform: translate(2px, 3px); }
+  .intro-link.paper-link:hover::before { transform: translate(2px, 2px); }
+  .intro-link.paper-link:hover > span { transform: translate(var(--paper-arrow-x, 0px), var(--paper-arrow-y, 2px)); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .products-hero .intro-link, .products-hero .intro-link::before, .products-hero .intro-link::after, .products-hero .intro-link > span { transition: none; }
-  .products-hero .intro-link:hover, .products-hero .intro-link:focus-visible, .products-hero .intro-link:hover > span, .products-hero .intro-link:focus-visible > span { transform: none; }
-  .products-hero .intro-link:hover::before, .products-hero .intro-link:focus-visible::before { transform: translate(4px, 5px); }
+  .intro-link.paper-link, .intro-link.paper-link::before, .intro-link.paper-link::after, .intro-link.paper-link > span { transition: none; }
+  .intro-link.paper-link:hover, .intro-link.paper-link:focus-visible, .intro-link.paper-link:hover > span, .intro-link.paper-link:focus-visible > span { transform: none; }
+  .intro-link.paper-link:hover::before, .intro-link.paper-link:focus-visible::before { transform: translate(4px, 5px); }
 }
 
 
@@ -204,4 +204,42 @@ main > section:not(:first-of-type) {
 @media (min-width: 761px) {
   .products-hero-artwork { display: grid; align-self: center; place-items: center; }
   .products-hero-artwork img { position: static; justify-self: end; margin-inline-end: calc(-1 * clamp(0px, calc((100vw - var(--content-width)) / 2 + var(--gutter)), 25%)); }
+}
+
+/* Products hero retains its original collection action. */
+.products-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1.75rem; }
+.products-hero-actions .intro-link { margin-top: 0; margin-right: 0; }
+@media (any-pointer: coarse) {
+  .intro-link.paper-link:is(:active, .is-touch-pressed) { transform: translate(2px, 3px); }
+  .intro-link.paper-link:is(:active, .is-touch-pressed)::before { transform: translate(2px, 2px); }
+  .intro-link.paper-link:is(:active, .is-touch-pressed) > span { transform: translate(var(--paper-arrow-x, 0px), var(--paper-arrow-y, 2px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-link.paper-link:is(:active, .is-touch-pressed),
+  .intro-link.paper-link:is(:hover, :focus-visible, :active, .is-touch-pressed) > span { transform: none; }
+  .intro-link.paper-link:is(:active, .is-touch-pressed)::before { transform: translate(4px, 5px); }
+}
+
+
+
+/* Closing invitation after the gallery, using the shared paper-link interaction. */
+.merch-store-cta { position: relative; isolation: isolate; background: var(--black); color: var(--white); }
+.merch-store-cta::before { content: ''; position: absolute; z-index: -1; inset: 0; background: url('../assets/images/textures/distressed-surface.svg') center / 850px; filter: invert(1); opacity: .16; mask-image: linear-gradient(100deg, #000, transparent 65%); pointer-events: none; }
+.merch-store-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-block: clamp(3.5rem, 7vw, 6rem); }
+.merch-store-heading .eyebrow { color: var(--pink); }
+.merch-store-heading h2 { margin-top: 1.25rem; font: 400 clamp(2.5rem, 5vw, 5rem)/1.08 var(--font-display); }
+.merch-store-heading h2 span { color: var(--pink); }
+.merch-store-copy { min-width: 0; width: 100%; text-align: right; }
+.merch-store-copy > p:first-child { max-width: 43ch; margin-left: auto; font-size: 1.1rem; line-height: 1.7; }
+.merch-store-cta .paper-link { --paper-arrow-x: 2px; --paper-arrow-y: -2px; }
+.merch-store-cta .merch-store-notice { margin-top: 1.25rem; font-size: .9rem; line-height: 1.6; }
+@media (max-width: 850px) {
+  .merch-store-inner { grid-template-columns: minmax(0, 1fr); }
+  .merch-store-copy { text-align: left; }
+  .merch-store-copy > p:first-child { margin-left: 0; }
+}
+
+/* Keep the description's existing right-side measure; align its actions to that measure. */
+@media (min-width: 851px) {
+  .merch-store-copy { width: fit-content; max-width: 100%; justify-self: end; text-align: left; }
 }
