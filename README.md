@@ -93,7 +93,7 @@ Currently undergoing feedback, final review, and deployment preparation.
 
 ## Development Credits
 
-- Website development: Rodolfo Quim Jr. (RquiTech)
+- Website development: Rodolfo Quim Jr., Second-year BS Information Technology student at Cavite State University – Silang Campus.
 - Brand identity, illustrations, characters, and merchandise designs: BANDA! Creative Team
 
 ## Acknowledgments
@@ -110,4 +110,4 @@ Public distribution of brand assets is subject to the approval of their respecti
 
 ---
 
-Developed by RquiTech.
+Developed by Rodolfo Quim Jr.
