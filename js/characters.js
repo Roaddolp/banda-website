@@ -23,12 +23,12 @@
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'character-trigger';
-    button.setAttribute('aria-label', `Explore ${name}'s character spotlight`);
+    button.setAttribute('aria-label', `Who is ${name}'s character spotlight?`);
     button.setAttribute('aria-haspopup', 'dialog');
     button.setAttribute('aria-controls', dialog.id);
     const label = document.createElement('span');
     label.className = 'trigger-caption';
-    label.textContent = `Explore ${name}`;
+    label.textContent = `Who is ${name}?`;
     const arrow = document.createElement('span');
     arrow.textContent = '↗';
     arrow.setAttribute('aria-hidden', 'true');
