@@ -201,10 +201,10 @@ main > section:not(:first-of-type) {
   .product-development-story > p + p { padding-top: 0; margin-top: 1.15rem; }
 }
 
-/* Use a little more of the existing right column without changing its alignment. */
+/* Let both right-hand paragraphs fill the existing grid column to the card edge. */
 @media (min-width: 901px) {
-  .product-development-copy > .product-development-description { max-width: 68ch; }
-  .product-development-story > p + p { max-width: 60ch; padding-top: clamp(1.5rem, 3.5vw, 3rem); }
+  .product-development-copy > .product-development-description { max-width: none; }
+  .product-development-story > p + p { max-width: none; padding-top: clamp(1.5rem, 3.5vw, 3rem); }
 }
 
 /* Match the homepage viewport framing, retaining the bottom-anchored artwork. */
