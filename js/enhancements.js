@@ -91,7 +91,7 @@
 
   if (!('IntersectionObserver' in window)) return;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const selector = '.hero-copy > *, .products-hero-copy > *, .intro-heading, .character-poster, .development-heading, .process-copy, .sketch-board, .digital-mount, .elements-mount, .wordmark-finale > *, .product-development-copy > *, .category-poster, .team-heading, .department, .contact-heading, .contact-action, .works-heading, .work-card, .merch-store-heading, .merch-store-copy';
+  const selector = '.hero-copy > *, .products-hero-copy > *, .intro-heading, .intro-body > p, .character-poster, .development-heading, .process-copy, .sketch-board, .digital-mount, .elements-mount, .wordmark-finale > *, .product-development-copy > *, .category-poster, .product-development-story, .exhibition-heading > *, .exhibition-gallery, .team-heading, .department, .contact-heading, .contact-action, .works-heading, .work-card, .merch-store-heading, .merch-store-copy';
   const tracked = new Set();
   let enterObserver, exitObserver, changes;
   function stop() {
@@ -147,13 +147,16 @@
     register();
     const gallery = document.querySelector('#works-grid');
     if (gallery) {
-      changes = new MutationObserver(register);
+      changes = new MutationObserver(() => { try { register(); } catch { stop(); } });
       changes.observe(gallery, { childList: true });
     }
   }
   document.addEventListener('focusin', event => {
     event.target.closest('[data-reveal]')?.classList.add('is-revealed');
   });
-  motion.addEventListener('change', start);
-  start();
+  function startSafely() {
+    try { start(); } catch { stop(); }
+  }
+  motion.addEventListener('change', startSafely);
+  startSafely();
 })();
