@@ -39,9 +39,15 @@
       "count": 3
     },
     {
+      "id": "photoshoot",
+      "title": "Photoshoot",
+      "sequence": 7,
+      "count": 5
+    },
+    {
       "id": "group-pic",
       "title": "Group Pic",
-      "sequence": 7,
+      "sequence": 8,
       "count": 1
     }
   ],
@@ -427,10 +433,110 @@
       "alt": "A person singing into a microphone beside the exhibition booths."
     },
     {
+      "id": "exhibition-photoshoot-01",
+      "chapter": "Photoshoot",
+      "chapterId": "photoshoot",
+      "sequence": 20,
+      "chapterPosition": 1,
+      "sourceFilename": "photoshoot.jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/20-photoshoot-01.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 241804,
+      "mobile": {
+        "src": "assets/images/exhibition/20-photoshoot-01-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 71380
+      },
+      "alt": "Two people wearing sunglasses and character merchandise, holding their hands near their faces."
+    },
+    {
+      "id": "exhibition-photoshoot-02",
+      "chapter": "Photoshoot",
+      "chapterId": "photoshoot",
+      "sequence": 21,
+      "chapterPosition": 2,
+      "sourceFilename": "photoshoot(2).jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/21-photoshoot-02.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 169508,
+      "mobile": {
+        "src": "assets/images/exhibition/21-photoshoot-02-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 51290
+      },
+      "alt": "Three people posing on stairs with BANDA! merchandise and a panda plush toy."
+    },
+    {
+      "id": "exhibition-photoshoot-03",
+      "chapter": "Photoshoot",
+      "chapterId": "photoshoot",
+      "sequence": 22,
+      "chapterPosition": 3,
+      "sourceFilename": "photoshoot(3).jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/22-photoshoot-03.webp",
+      "width": 1280,
+      "height": 1920,
+      "bytes": 65206,
+      "mobile": {
+        "src": "assets/images/exhibition/22-photoshoot-03-small.webp",
+        "width": 720,
+        "height": 1080,
+        "bytes": 26582
+      },
+      "alt": "Close-up of an Absolute Banger character sticker on a wooden surface."
+    },
+    {
+      "id": "exhibition-photoshoot-04",
+      "chapter": "Photoshoot",
+      "chapterId": "photoshoot",
+      "sequence": 23,
+      "chapterPosition": 4,
+      "sourceFilename": "photoshoot(4).jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/23-photoshoot-04.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 132392,
+      "mobile": {
+        "src": "assets/images/exhibition/23-photoshoot-04-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 45666
+      },
+      "alt": "Black-and-white close-up of button pins attached to a dark tie."
+    },
+    {
+      "id": "exhibition-photoshoot-05",
+      "chapter": "Photoshoot",
+      "chapterId": "photoshoot",
+      "sequence": 24,
+      "chapterPosition": 5,
+      "sourceFilename": "photoshoot(5).jpg",
+      "sourceRender": "jpeg",
+      "src": "assets/images/exhibition/24-photoshoot-05.webp",
+      "width": 1920,
+      "height": 1280,
+      "bytes": 162954,
+      "mobile": {
+        "src": "assets/images/exhibition/24-photoshoot-05-small.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 63828
+      },
+      "alt": "A person holding up hands decorated with character keychains and colorful bracelets."
+    },
+    {
       "id": "exhibition-20",
       "chapter": "Group Pic",
       "chapterId": "group-pic",
-      "sequence": 20,
+      "sequence": 25,
       "chapterPosition": 1,
       "sourceFilename": "group pic.jpg",
       "sourceRender": "jpeg",
