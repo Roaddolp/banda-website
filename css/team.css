@@ -63,3 +63,6 @@
 .contact-heading .eyebrow { margin-bottom: 1rem; }
 
 
+
+/* Keep heading selection visible on pink; black contact cards retain the global highlight. */
+.contact-heading ::selection { background: var(--black); color: var(--pink); }

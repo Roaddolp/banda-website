@@ -187,24 +187,35 @@ main > section:not(:first-of-type) {
 
 /* Keep the description secondary, with a little more presence and breathing room. */
 .product-development-description { min-width: 0; max-width: 64ch; padding-top: 2.1rem; }
-.product-development-description > p { max-width: none; margin: 0; font-size: 1.05rem; line-height: 1.75; }
+.product-development-description > p { -webkit-user-select: text; user-select: text; max-width: none; margin: 0; font-size: 1.05rem; line-height: 1.75; }
+/* Contrast selection across the introduction's pink surface, including its heading and eyebrow. */
+.product-development-copy ::selection { background: var(--black); color: var(--pink); }
 .product-development-description > p + p { margin-top: 1.15rem; }
 /* Read from the introduction through the artwork, then the two-part design narrative. */
 .product-development-copy { row-gap: 1.5rem; }
 .product-development .category-picker { margin-top: clamp(2.5rem, 3.5vw, 3rem); }
-.product-development-story { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; margin-top: clamp(2rem, 4vw, 3.5rem); }
-.product-development-story > p { min-width: 0; max-width: 56ch; margin: 0; font-size: 1.05rem; line-height: 1.75; }
-.product-development-story > p + p { padding-top: clamp(1.5rem, 4vw, 3.5rem); }
+/* A restrained editorial panel separates the supporting narrative from the artwork. */
+.product-development-story { position: relative; isolation: isolate; box-shadow: 4px 5px 0 #00000024; margin-top: clamp(2rem, 4vw, 3.5rem); padding: clamp(1.25rem, 4vw, 3rem); background: var(--black); color: var(--white); }
+.product-development-story::before { content: ''; position: absolute; z-index: -1; inset: 8px; border: 1px solid #ffffff18; pointer-events: none; }
+.product-development-story::after { content: ''; position: absolute; z-index: -1; inset: 0; background: url('../assets/images/textures/distressed-surface.svg') center / 650px; filter: invert(1); opacity: .055; mask-image: linear-gradient(110deg, #000, transparent 35%, transparent 70%, #000); pointer-events: none; }
+.product-development-story-copy { max-width: 84ch; margin-inline: auto; font-size: 1.05rem; line-height: 1.75; }
+.product-development-story-copy > h3 { display: inline-block; padding: .35rem .65rem; margin: 0 0 1.5rem; background: var(--pink); color: var(--black); font: 700 .7rem/1.6 var(--font-body); letter-spacing: .13em; }
+.product-development-story-copy > p { max-width: none; padding: 0; margin: 0; font-size: 1.05rem; line-height: 1.75; }
+.product-development-story-copy > p:first-of-type { font-size: clamp(1.1rem, 1.4vw, 1.25rem); line-height: 1.6; }
+.product-development-story-copy > p + p { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #f97bb24d; }
 @media (max-width: 900px) {
-  .product-development-copy, .product-development-story { display: block; }
+  .product-development-copy { display: block; }
   .product-development-description { padding-top: 0; margin-top: 1.5rem; }
-  .product-development-story > p + p { padding-top: 0; margin-top: 1.15rem; }
 }
 
-/* Let both right-hand paragraphs fill the existing grid column to the card edge. */
+/* Shift only within the spare inner gutter, keeping narrower panels safely padded. */
+@media (min-width: 901px) {
+  .product-development-story-copy { position: relative; left: clamp(-35px, calc((84ch - 100%) / 2), 0px); }
+}
+
+/* The opening paragraph continues to fill its existing desktop column. */
 @media (min-width: 901px) {
   .product-development-copy > .product-development-description { max-width: none; }
-  .product-development-story > p + p { max-width: none; padding-top: clamp(1.5rem, 3.5vw, 3rem); }
 }
 
 /* Match the homepage viewport framing, retaining the bottom-anchored artwork. */
