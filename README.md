@@ -1,100 +1,211 @@
 # BANDA! — Brand Showcase Website
 
-A responsive brand storytelling website for BANDA!, a creative merchandising brand led by Multimedia Arts students. Original characters, artwork, the design process, exhibition documentation, and the team are presented through a pink, black, and white punk-grunge visual identity.
+A responsive brand storytelling website for **BANDA!**, a creative merchandising brand led by Multimedia Arts students.
 
-This is a brand showcase with an external merchandise-site link. It has no shopping cart, checkout, payments, accounts, or backend.
+The website introduces the brand’s original characters, documents its creative development, showcases merchandise designs, and celebrates the people behind the project through a pink, black, and white punk-grunge visual identity.
 
-## Links and hosting
+This is a **brand showcase website**, not an online store. It does not include checkout, payments, customer accounts, or backend services.
 
-- [GitHub repository](https://github.com/Roaddolp/banda-website) — its root contains the website files and this README.
-- [Live website on Cloudflare Pages](https://banda-website.pages.dev/).
-- [GitHub Pages deployment](https://roaddolp.github.io/banda-website/) — also recorded as successful in the repository's deployment metadata.
-- [Original BANDA! merchandise website](https://banda-shop.pages.dev/) — for exploration; **pre-orders are currently closed**.
+## Live Website
 
-Cloudflare Pages and the original merchandise URL were checked on November 27, 2026. Local changes do not imply that the deployed website has been updated.
+- **Cloudflare Pages:** [banda-website.pages.dev](https://banda-website.pages.dev/)
+- **GitHub Repository:** [Roaddolp/banda-website](https://github.com/Roaddolp/banda-website)
+- **GitHub Pages:** [roaddolp.github.io/banda-website](https://roaddolp.github.io/banda-website/)
+- **Original Merchandise Website:** [banda-shop.pages.dev](https://banda-shop.pages.dev/)
 
-## Pages and features
+**Pre-orders on the original merchandise website are currently closed.**
 
-| Page / Section | Current implementation |
-| --- | --- |
-| `index.html` | Brand introduction, original artwork, and responsive hero |
-| Meet the Noise | Interactive profiles for Bam, Melody, and Blaze |
-| Logo Design & Development | Initial sketches, photo referencing, element organization, and developed wordmark |
-| Product Design & Development | Four merchandise category cards and a contrasting Behind the Designs storytelling panel |
-| Behind the Noise | Exhibition documentation through a continuous, swipeable photo marquee |
-| About & Contact | The 16-member team grouped by department, plus email and telephone links |
-| `products.html` | Creative Works: 35 documented designs, category filters, pagination, and artwork spotlights; selected works have front/back previews |
-| Products closing CTA | External merchandise-site link with a closed-preorder notice |
+## Website Content
 
-Both pages share navigation for Meet the Noise, Merch, Background, Exhibition, About, and Contact. The BANDA! logo links home. A mobile hamburger menu, active-section tracking, keyboard focus feedback, touch interactions, scroll reveals, and reduced-motion support complement the responsive layouts.
+### Homepage
 
-## Exhibition marquee
+- **Brand Introduction** — BANDA!’s identity, official logo, and character artwork.
+- **Meet the Noise** — Interactive profiles introducing Bam, Melody, and Blaze.
+- **Logo Design & Development** — Initial sketches, photo referencing, element organization, and the developed wordmark.
+- **Product Design & Development** — Merchandise category cards and a “Behind the Designs” editorial panel presenting the client’s design narrative.
+- **Behind the Noise** — Exhibition documentation through a continuous, draggable photo marquee.
+- **About** — Team credits organized into Communications, Logistics, Finance, and Creatives.
+- **Contact** — Official email and telephone links.
 
-The current gallery contains **25 photographs across eight internal chapters**:
+### Products Page
 
-Preparation (2) → Booth (2) → Showcase (3) → Social (6) → Instruments (3) → Entertainment (3) → Photoshoot (5) → Group Pic (1).
+- Creative Works introduction featuring official BANDA! artwork.
+- Showcase of **35 documented designs** across acrylic keychains, pins, stickers, and bracelets.
+- Category filtering and pagination.
+- Artwork spotlights, including front/back previews where available.
+- External merchandise-site CTA with a closed-preorder notice.
 
-Chapter labels are not displayed in the gallery.
+## Features
 
-- Continuous right-to-left autoplay runs at 24 CSS pixels per second.
-- Mouse dragging and horizontal touch swiping browse in both directions; vertical page scrolling remains available.
-- Autoplay pauses during manual interaction and resumes from the current position afterward. Keyboard focus pauses motion while visitors browse with Left/Right/Home/End.
-- Inert, accessibility-hidden duplicate groups on either side maintain seamless looping in both directions.
-- Reduced-motion mode disables autoplay while retaining manual browsing. There is no Pause/Play button.
-- Without JavaScript, the static HTML strip contains all 25 photographs. The enhanced gallery reads `js/data/exhibition.json`.
+- Responsive layouts for desktop, tablet, and mobile.
+- Shared navigation with a mobile hamburger menu.
+- Homepage section tracking and cross-page anchor links.
+- Interactive character profiles and merchandise spotlights.
+- Mouse hover, keyboard focus, and adaptive touch feedback.
+- Subtle scroll-triggered reveals and scrapbook-inspired process animations.
+- Reduced-motion support.
+- Optimized image assets and self-hosted fonts.
+- Consistent favicon branding using the official black BANDA! logo.
 
-Optimized WebPs preserve orientation and aspect ratios, with desktop and smaller variants. The final Group Pic retains its original asset filename while its manifest sequence is now 25. See `assets/images/exhibition/README.md` for the photo inventory and preparation details.
+## Exhibition Gallery
 
-## Technologies and structure
+The exhibition marquee contains **25 photographs** in the following order:
 
-Semantic HTML5, CSS, vanilla JavaScript, inline SVG, and WebP. No framework, build step, runtime dependency installation, or backend is required. Fonts are self-hosted.
+| Chapter | Photographs |
+| --- | ---: |
+| Preparation | 2 |
+| Booth | 2 |
+| Showcase | 3 |
+| Social | 6 |
+| Instruments | 3 |
+| Entertainment | 3 |
+| Photoshoot | 5 |
+| Group Pic | 1 |
+
+Chapter names are maintained internally and are not displayed as gallery labels.
+
+The gallery supports:
+
+- Continuous right-to-left autoplay.
+- Seamless looping in both directions.
+- Horizontal mouse dragging and touchscreen swiping.
+- Temporary autoplay pause during manual interaction, followed by continuation from the current position.
+- Keyboard browsing with Left, Right, Home, and End.
+- Paused motion during keyboard focus.
+- Manual browsing without autoplay when reduced motion is preferred.
+- A scrollable photo-strip fallback when JavaScript is unavailable.
+
+There is no visible Pause/Play control.
+
+## Visual Identity
+
+The website follows BANDA!’s supplied creative direction:
+
+- **Light Pink:** `#F97BB2`
+- **Deep Pink:** `#D94283`
+- **Black:** `#000000`
+- **White:** `#FFFFFF`
+- **Fonts:** Barlow and Barriecito
+
+Grunge textures, halftones, layered-paper details, collage compositions, and torn section transitions support the brand’s digital punk-zine presentation.
+
+## Technologies
+
+- Semantic HTML5
+- CSS3
+- Vanilla JavaScript
+- Intersection Observer API
+- Pointer Events
+- `requestAnimationFrame`
+- WebP, PNG, ICO, and SVG assets
+
+No frontend framework, build step, database, or backend is required.
+
+## Project Structure
 
 ```text
-index.html                  Homepage and exhibition
-products.html               Creative Works page
-css/                        Tokens, layouts, section styles, and enhancements
-js/                         Navigation, dialogs, character/product interactions, exhibition
-js/data/works.js             Merchandise data
-js/data/exhibition.json      Ordered exhibition manifest and descriptive alt text
-assets/images/              Optimized artwork, textures, and exhibition photographs
-assets/fonts/               Self-hosted fonts and licenses
-README.md
+website/
+├── index.html
+├── products.html
+├── favicon.ico
+├── css/
+│   ├── tokens.css
+│   ├── base.css
+│   ├── layout.css
+│   ├── components.css
+│   ├── characters.css
+│   ├── development.css
+│   ├── works.css
+│   ├── exhibition.css
+│   ├── team.css
+│   └── enhancements.css
+├── js/
+│   ├── main.js
+│   ├── enhancements.js
+│   ├── characters.js
+│   ├── dialog.js
+│   ├── sketch-pendulum.js
+│   ├── works.js
+│   ├── exhibition.js
+│   └── data/
+│       ├── works.js
+│       └── exhibition.json
+├── assets/
+│   ├── fonts/
+│   ├── icons/
+│   └── images/
+└── README.md
 ```
 
-## Local development
+In a repository clone, the contents shown inside `website/` are the repository root.
 
-1. Clone or download the repository and open its root in VS Code. In the supplied workspace, this is the `website/` folder.
-2. Start Live Server / Live Preview from that folder, or use Python if installed:
+## Running Locally
+
+1. Clone or download the repository.
+2. Open the website folder in Visual Studio Code.
+3. Start a local HTTP server using **Live Server**, **Live Preview**, or Python:
 
    ```sh
    python -m http.server 8000
    ```
 
-3. Open `http://localhost:8000/index.html` and `http://localhost:8000/products.html`.
+4. Open:
 
-Use HTTP rather than `file://`: the exhibition manifest loads through `fetch()`. No `npm install` or build command is needed. For static hosting, publish the repository root containing both HTML files and `assets/`.
+   ```text
+   http://localhost:8000/index.html
+   http://localhost:8000/products.html
+   ```
 
-## Status and review
+Use an HTTP server rather than opening the HTML files through `file://`, because the exhibition gallery loads its manifest using `fetch()`.
 
-BANDA! v1.1 is undergoing client feedback and local refinement. Recent changes include the editorial product narrative, separate merchandise-site CTA, exhibition marquee, updated navigation, responsive hero-height safeguards for tall Desktop Site viewports, and visible text-selection colors on pink surfaces.
+No dependency installation or build command is needed.
 
-Local browser checks cover desktop/mobile layouts, photo order and loading, loop boundaries, dragging/swiping, keyboard browsing, reduced motion, and the static fallback. Touch checks use browser emulation; final physical-device visual and performance review remains useful. Publication of team/contact details and exhibition imagery remains subject to client approval for public release.
+## Content and Asset Maintenance
 
-The former card-stack implementation is archived outside this Git repository at `../archives/exhibition-card-stack-v1.zip` in the supplied workspace. This is a local recovery artifact, not a production dependency or a file included in a repository download.
+- Update merchandise data in `js/data/works.js`.
+- Update exhibition ordering, paths, dimensions, and alt text in `js/data/exhibition.json`.
+- Keep the static exhibition strip in `index.html` synchronized with the manifest.
+- Store optimized production images in `assets/images/`.
+- Preserve original client artwork and full-resolution photographs separately.
+- Keep client-authored copy and team information consistent with approved sources.
+
+Exhibition photographs have desktop and smaller WebP variants. Original aspect ratios and orientation are preserved without unnecessary cropping.
+
+## Accessibility and Verification
+
+The implementation includes semantic controls, descriptive image text, visible keyboard focus, accessible dialog and navigation behavior, and reduced-motion alternatives.
+
+Development checks have covered:
+
+- Desktop and mobile layouts.
+- Keyboard navigation and focus behavior.
+- Emulated touchscreen interactions.
+- Merchandise category links and gallery controls.
+- Exhibition image loading, sequence, looping, and manual browsing.
+- Scroll-reveal behavior and visibility fallbacks.
+- Text-selection contrast on pink backgrounds.
+- Horizontal overflow, missing resources, and browser errors.
+- Favicon references and asset loading.
+
+Browser emulation does not replace physical-device testing. Final visual and performance review on actual devices remains recommended.
+
+## Project Status
+
+BANDA! v1.1 includes the major content sections and is undergoing iterative client review and refinement.
+
+Local changes may differ from the currently deployed version until they are reviewed and published. Public use of team details, contact information, and photographs remains subject to client authorization.
 
 ## Development Credits
 
-- Website development: Rodolfo Quim Jr., Second-year BS Information Technology student at Cavite State University – Silang Campus.
-- Brand identity, illustrations, characters, and merchandise designs: BANDA! Creative Team
+- **Website Development:** Rodolfo Quim Jr., second-year BS Information Technology student at Cavite State University – Silang Campus.
+- **Brand Identity, Illustrations, Characters, and Merchandise Designs:** BANDA! Creative Team.
 
 ## Acknowledgments
 
-This project was developed using an AI-assisted development workflow, with human-led design decisions, implementation review, testing, and iterative refinement.
+Developed through an AI-assisted workflow with human-led requirements, design decisions, implementation review, testing, and refinement.
 
 ## Asset Rights
 
-BANDA! branding, illustrations, characters, and merchandise artwork belong to their respective creators.
+BANDA! branding, illustrations, characters, merchandise artwork, and photographs belong to their respective creators and rights holders.
 
-The website uses Barriecito and Barlow fonts under the SIL Open Font License.
-
-Public distribution of brand assets is subject to the approval of their respective owners.
+Barlow and Barriecito are used under the SIL Open Font License. Public redistribution or reuse of client assets requires appropriate authorization.
